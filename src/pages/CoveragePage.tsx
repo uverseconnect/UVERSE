@@ -5,6 +5,8 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
+import LiveChatWidget from '@/components/LiveChatWidget';
+import SpeedTest from '@/components/SpeedTest';
 import { useState } from 'react';
 
 const cities = [
@@ -150,6 +152,29 @@ const CoveragePage = () => {
         </div>
       </section>
       
+      {/* Speed Test Section */}
+      <section className="py-20 lg:py-32 bg-muted/30">
+        <div className="container mx-auto px-4 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
+              Test Your Connection Speed
+            </h2>
+            <p className="text-lg text-muted-foreground">
+              Check your current internet performance with our speed test tool.
+            </p>
+          </motion.div>
+          
+          <div className="max-w-xl mx-auto">
+            <SpeedTest />
+          </div>
+        </div>
+      </section>
+      
       {/* CTA */}
       <section className="py-20 bg-gradient-to-br from-primary/5 to-accent/5">
         <div className="container mx-auto px-4 lg:px-8 text-center">
@@ -169,6 +194,7 @@ const CoveragePage = () => {
       </section>
       
       <Footer />
+      <LiveChatWidget />
     </div>
   );
 };
