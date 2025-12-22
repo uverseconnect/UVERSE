@@ -4,6 +4,7 @@ import { Tv, ArrowRight, Check, Film, Trophy, Newspaper, Music, Heart, Gamepad2 
 import { Button } from '@/components/ui/button';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
+import heroTvNew from '@/assets/hero-tv-new.jpg';
 
 const packages = [
   {
@@ -66,7 +67,14 @@ const CableTVPage = () => {
       
       {/* Hero */}
       <section className="pt-32 pb-20 lg:pt-40 lg:pb-32 relative overflow-hidden">
-        <div className="absolute inset-0 hero-gradient" />
+        <div className="absolute inset-0">
+          <img
+            src={heroTvNew}
+            alt="Premium cable TV entertainment"
+            className="w-full h-full object-cover opacity-50"
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-background/50 via-background/30 to-background/50" />
+        </div>
         <div className="absolute top-20 left-0 w-[600px] h-[600px] blob opacity-50" />
         
         <div className="container mx-auto px-4 lg:px-8 relative">
@@ -77,17 +85,25 @@ const CableTVPage = () => {
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
               <Tv className="w-4 h-4" />
-              <span>Premium Cable TV Packages</span>
+              <span>Cable TV Service Guidance</span>
             </div>
             
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight mb-6">
-              Crystal Clear{' '}
-              <span className="text-primary">Entertainment</span> for Everyone
+              Navigate Cable TV Options for{' '}
+              <span className="text-primary">Your Entertainment</span> Needs
             </h1>
             
             <p className="text-lg text-muted-foreground mb-8">
-              500+ HD channels, sports, movies, and more. The ultimate TV experience for your family.
+              Get assistance understanding cable TV packages from multiple providers™. We help you compare channels, pricing, and features.
             </p>
+            
+            {/* Disclosure */}
+            <div className="bg-card/80 backdrop-blur-sm border border-primary/10 rounded-xl p-4 text-sm text-muted-foreground max-w-2xl mx-auto">
+              <p>
+                <strong className="text-foreground">Important:</strong> Uverse Connect is an independent service assistance platform. 
+                We provide guidance about cable TV options but do not sell or provide cable services directly. Service fees apply separately from provider charges.
+              </p>
+            </div>
           </motion.div>
         </div>
       </section>
@@ -178,7 +194,7 @@ const CableTVPage = () => {
                     size="lg"
                     className="w-full"
                   >
-                    Get Started
+                    Get Assistance
                   </Button>
                 </Link>
               </motion.div>
@@ -191,14 +207,14 @@ const CableTVPage = () => {
       <section className="py-20 bg-gradient-to-br from-primary/5 to-accent/5">
         <div className="container mx-auto px-4 lg:px-8 text-center">
           <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
-            Start Watching Today
+            Ready to Explore Your Options?
           </h2>
           <p className="text-lg text-muted-foreground mb-8">
-            Professional installation and setup included with all packages.
+            Let us help you understand cable TV packages available from various providers™ in your area.
           </p>
           <Link to="/contact">
             <Button variant="hero" size="xl" className="gap-2">
-              Get Started
+              Get Assistance
               <ArrowRight className="w-5 h-5" />
             </Button>
           </Link>

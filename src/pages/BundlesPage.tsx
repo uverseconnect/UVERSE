@@ -4,6 +4,7 @@ import { Package, ArrowRight, Check, Wifi, Tv, Star, Zap } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
+import heroBundlesNew from '@/assets/hero-bundles-new.jpg';
 
 const bundles = [
   {
@@ -65,7 +66,14 @@ const BundlesPage = () => {
       
       {/* Hero */}
       <section className="pt-32 pb-20 lg:pt-40 lg:pb-32 relative overflow-hidden">
-        <div className="absolute inset-0 hero-gradient" />
+        <div className="absolute inset-0">
+          <img
+            src={heroBundlesNew}
+            alt="Family enjoying bundled services"
+            className="w-full h-full object-cover opacity-50"
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-background/50 via-background/30 to-background/50" />
+        </div>
         <div className="absolute top-20 right-0 w-[600px] h-[600px] blob opacity-50" />
         <div className="absolute bottom-0 left-10 w-[400px] h-[400px] blob-green opacity-40" />
         
@@ -77,17 +85,25 @@ const BundlesPage = () => {
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 text-accent text-sm font-medium mb-6">
               <Star className="w-4 h-4" />
-              <span>Save More with Bundles</span>
+              <span>Bundle Options Guidance</span>
             </div>
             
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight mb-6">
-              Internet + Cable{' '}
-              <span className="text-primary">Bundle & Save</span>
+              Understand Bundle Packages{' '}
+              <span className="text-primary">That Fit Your Needs</span>
             </h1>
             
             <p className="text-lg text-muted-foreground mb-8">
-              Get the best of both worlds. Combine high-speed internet with premium cable TV and save up to $49/month.
+              Get assistance comparing internet + cable TV bundles from multiple providers™. We help you understand the potential savings and benefits.
             </p>
+            
+            {/* Disclosure */}
+            <div className="bg-card/80 backdrop-blur-sm border border-primary/10 rounded-xl p-4 text-sm text-muted-foreground max-w-2xl mx-auto">
+              <p>
+                <strong className="text-foreground">Important:</strong> Uverse Connect is an independent service assistance platform. 
+                We provide guidance about bundle options but do not sell or provide these services directly. Service fees apply separately from provider charges.
+              </p>
+            </div>
           </motion.div>
         </div>
       </section>
@@ -154,7 +170,7 @@ const BundlesPage = () => {
                     size="lg"
                     className="w-full"
                   >
-                    Get This Bundle
+                    Get Assistance
                   </Button>
                 </Link>
               </motion.div>
@@ -206,14 +222,14 @@ const BundlesPage = () => {
       <section className="py-20 bg-gradient-to-br from-primary/5 to-accent/5">
         <div className="container mx-auto px-4 lg:px-8 text-center">
           <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
-            Ready to Bundle & Save?
+            Ready to Explore Bundle Options?
           </h2>
           <p className="text-lg text-muted-foreground mb-8">
-            Get started today and enjoy seamless entertainment.
+            Let us guide you through bundle packages available from various providers™ in your area.
           </p>
           <Link to="/contact">
             <Button variant="hero" size="xl" className="gap-2">
-              Get Started
+              Get Assistance
               <ArrowRight className="w-5 h-5" />
             </Button>
           </Link>

@@ -175,7 +175,7 @@ const SupportPage = () => {
           <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
             {[
               { icon: Phone, title: 'Phone Support', description: '(888) 811-0313', sub: 'Available 24/7' },
-              { icon: Mail, title: 'Email Support', description: 'support@streamnet.com', sub: 'Response within 24 hours' },
+              { icon: Mail, title: 'Email Support', description: 'support@universeconnect.com', sub: 'Response within 24 hours' },
               { icon: MessageCircle, title: 'Live Chat', description: 'Chat with us now', sub: 'Available 8am-10pm ET' }
             ].map((option, index) => (
               <motion.div

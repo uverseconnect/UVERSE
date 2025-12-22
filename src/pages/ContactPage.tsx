@@ -7,6 +7,7 @@ import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import { useState } from 'react';
 import { useToast } from '@/hooks/use-toast';
+import heroContactNew from '@/assets/hero-contact-new.jpg';
 
 const ContactPage = () => {
   const { toast } = useToast();
@@ -38,7 +39,14 @@ const ContactPage = () => {
       
       {/* Hero */}
       <section className="pt-32 pb-20 lg:pt-40 lg:pb-32 relative overflow-hidden">
-        <div className="absolute inset-0 hero-gradient" />
+        <div className="absolute inset-0">
+          <img
+            src={heroContactNew}
+            alt="Contact our support team"
+            className="w-full h-full object-cover opacity-50"
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-background/50 via-background/30 to-background/50" />
+        </div>
         <div className="absolute top-20 right-0 w-[600px] h-[600px] blob opacity-50" />
         
         <div className="container mx-auto px-4 lg:px-8 relative">
@@ -58,8 +66,16 @@ const ContactPage = () => {
             </h1>
             
             <p className="text-lg text-muted-foreground mb-8">
-              Have questions? We're here to help. Reach out and we'll get back to you as soon as possible.
+              Have questions about our service assistance? We're here to help guide you through your connectivity options.
             </p>
+            
+            {/* Disclosure */}
+            <div className="bg-card/80 backdrop-blur-sm border border-primary/10 rounded-xl p-4 text-sm text-muted-foreground max-w-2xl mx-auto">
+              <p>
+                <strong className="text-foreground">Important:</strong> Uverse Connect is an independent third-party service assistance platform. 
+                We provide guidance about internet and cable options but do not sell or provide these services directly.
+              </p>
+            </div>
           </motion.div>
         </div>
       </section>
@@ -177,8 +193,8 @@ const ContactPage = () => {
                     </div>
                     <div>
                       <h3 className="font-semibold text-foreground mb-1">Email</h3>
-                      <a href="mailto:support@streamnet.com" className="text-primary hover:underline">
-                        support@streamnet.com
+                      <a href="mailto:support@universeconnect.com" className="text-primary hover:underline">
+                        support@universeconnect.com
                       </a>
                       <p className="text-sm text-muted-foreground">Response within 24 hours</p>
                     </div>

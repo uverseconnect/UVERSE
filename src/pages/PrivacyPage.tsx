@@ -50,14 +50,14 @@ const PrivacyPage = () => {
               <h2 className="text-2xl font-semibold text-foreground mt-8">5. Your Rights</h2>
               <p>
                 You have the right to access, correct, or delete your personal information. 
-                Contact us at support@streamnet.com to exercise these rights.
+                Contact us at support@universeconnect.com to exercise these rights.
               </p>
               
               <h2 className="text-2xl font-semibold text-foreground mt-8">6. Contact Us</h2>
               <p>
                 If you have questions about this Privacy Policy, please contact us at:
                 <br />
-                Email: support@streamnet.com
+                Email: support@universeconnect.com
                 <br />
                 Phone: (888) 811-0313
               </p>

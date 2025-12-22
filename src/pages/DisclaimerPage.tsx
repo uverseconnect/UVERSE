@@ -17,45 +17,143 @@ const DisclaimerPage = () => {
             <h1 className="text-4xl font-bold text-foreground mb-8">Disclaimer</h1>
             
             <div className="prose prose-lg max-w-none text-muted-foreground space-y-6">
-              <p className="text-sm text-muted-foreground">Last updated: December 2024</p>
+              <p className="text-sm text-muted-foreground">Last updated: January 2025</p>
               
-              <h2 className="text-2xl font-semibold text-foreground mt-8">General Information</h2>
+              <div className="bg-amber-500/10 border border-amber-500/20 rounded-lg p-6 my-6">
+                <p className="font-semibold text-foreground mb-2">⚠️ Independent Service Notice</p>
+                <p className="text-sm">
+                  Uverse Connect is an independent third-party service assistance platform. We are NOT an 
+                  internet service provider, cable company, or telecommunications carrier. We do not 
+                  provide internet, cable TV, or phone services directly.
+                </p>
+              </div>
+              
+              <h2 className="text-2xl font-semibold text-foreground mt-8">Nature of Our Service</h2>
               <p>
-                The information provided on this website is for general informational purposes only. 
-                StreamNet provides assistance and information about internet and cable TV services 
-                but is not a direct service provider.
+                Uverse Connect provides educational guidance, consultation, and assistance to help consumers 
+                understand and navigate available internet, cable TV, and telecommunications service 
+                options. We are not affiliated with, endorsed by, or acting on behalf of any service 
+                provider, ISP, cable company, or telecommunications carrier.
               </p>
               
-              <h2 className="text-2xl font-semibold text-foreground mt-8">No Guarantees</h2>
+              <h2 className="text-2xl font-semibold text-foreground mt-8">No Direct Service Provision</h2>
               <p>
-                While we strive to provide accurate and up-to-date information, we make no representations 
-                or warranties about the completeness, accuracy, reliability, or availability of any 
-                information, products, or services mentioned.
+                Uverse Connect does not:
+              </p>
+              <ul className="list-disc pl-6 space-y-2">
+                <li>Sell internet plans, cable packages, or phone services</li>
+                <li>Provide direct internet connectivity or cable television broadcasts</li>
+                <li>Install or maintain telecommunications equipment</li>
+                <li>Bill customers for monthly internet, cable, or phone services</li>
+                <li>Handle technical support for internet or cable service issues</li>
+                <li>Have access to provider account credentials or systems</li>
+              </ul>
+              
+              <h2 className="text-2xl font-semibold text-foreground mt-8">Trademark Disclaimer</h2>
+              <p>
+                All company names, service provider names, brand names, logos, and trademarks mentioned 
+                on this website are the property of their respective owners. References to these brands 
+                are for informational and educational purposes only and do not imply any affiliation, 
+                endorsement, or partnership. Uverse Connect is not authorized to act on behalf of any 
+                internet service provider, cable company, or telecommunications carrier.
               </p>
               
-              <h2 className="text-2xl font-semibold text-foreground mt-8">Third-Party Services</h2>
+              <h2 className="text-2xl font-semibold text-foreground mt-8">Information Accuracy</h2>
               <p>
-                Service availability, pricing, and features are subject to change by service providers 
-                and may vary by location. We are not responsible for the actions or services of 
-                third-party providers.
+                While we make every effort to provide accurate and current information about service 
+                options, pricing, and availability:
+              </p>
+              <ul className="list-disc pl-6 space-y-2">
+                <li>Service availability varies by location and is determined solely by providers</li>
+                <li>Pricing and plan details are subject to change without notice by providers</li>
+                <li>Promotional offers may have eligibility requirements or time restrictions</li>
+                <li>We cannot guarantee the accuracy of third-party provider information</li>
+              </ul>
+              <p>
+                Always verify current pricing, availability, and terms directly with service providers 
+                before making any decisions.
               </p>
               
-              <h2 className="text-2xl font-semibold text-foreground mt-8">Professional Advice</h2>
+              <h2 className="text-2xl font-semibold text-foreground mt-8">Third-Party Provider Responsibility</h2>
               <p>
-                The content on this website is not intended to be a substitute for professional advice. 
-                Always consult with qualified professionals for specific guidance.
+                Any services you choose to purchase or activate are provided entirely by third-party 
+                providers. Uverse Connect is not responsible for:
               </p>
+              <ul className="list-disc pl-6 space-y-2">
+                <li>Service quality, speed, reliability, or availability provided by third parties</li>
+                <li>Provider billing practices, payment processing, or billing disputes</li>
+                <li>Installation scheduling, delays, or quality of installation work</li>
+                <li>Technical issues, outages, or service interruptions</li>
+                <li>Provider customer service quality or response times</li>
+                <li>Contract terms, cancellation policies, or fees imposed by providers</li>
+                <li>Equipment functionality, compatibility, or return policies</li>
+              </ul>
+              
+              <h2 className="text-2xl font-semibold text-foreground mt-8">No Guarantees or Warranties</h2>
+              <p>
+                Uverse Connect provides assistance and information "as is" without any guarantees or warranties. 
+                We do not guarantee:
+              </p>
+              <ul className="list-disc pl-6 space-y-2">
+                <li>That you will qualify for or be approved for any specific service</li>
+                <li>Any particular level of service quality or performance from providers</li>
+                <li>The availability of specific plans, pricing, or promotions in your area</li>
+                <li>That providers will honor promotional offers or pricing discussed</li>
+              </ul>
               
               <h2 className="text-2xl font-semibold text-foreground mt-8">Limitation of Liability</h2>
               <p>
-                StreamNet shall not be liable for any losses or damages arising from your use of 
-                this website or reliance on any information provided herein.
+                To the maximum extent permitted by law, Uverse Connect and its founders, employees, and 
+                representatives shall not be liable for any direct, indirect, incidental, consequential, 
+                or punitive damages arising from:
+              </p>
+              <ul className="list-disc pl-6 space-y-2">
+                <li>Your use of our assistance services or website</li>
+                <li>Any information, advice, or guidance provided by our team</li>
+                <li>Services provided by third-party providers you choose to work with</li>
+                <li>Delays, errors, or interruptions in our service</li>
+                <li>Decisions made based on information provided on this website</li>
+              </ul>
+              
+              <h2 className="text-2xl font-semibold text-foreground mt-8">Independent Decision Making</h2>
+              <p>
+                Our assistance is educational and advisory in nature. All final decisions about which 
+                services to purchase, which providers to work with, and what terms to accept are made 
+                solely by you. We strongly encourage you to:
+              </p>
+              <ul className="list-disc pl-6 space-y-2">
+                <li>Review all contract terms and conditions carefully before signing</li>
+                <li>Verify pricing and service details directly with providers</li>
+                <li>Ask providers about cancellation policies and fees</li>
+                <li>Understand your rights and responsibilities under provider agreements</li>
+              </ul>
+              
+              <h2 className="text-2xl font-semibold text-foreground mt-8">Service Assistance Fees</h2>
+              <p>
+                Uverse Connect charges a service assistance fee for our consultation and guidance services. 
+                This fee is separate from and in addition to any charges you will pay directly to 
+                service providers for their services. Our fee structure is disclosed prior to service 
+                and covers only our assistance - not the actual internet, cable, or phone services 
+                themselves.
               </p>
               
-              <h2 className="text-2xl font-semibold text-foreground mt-8">Contact</h2>
+              <h2 className="text-2xl font-semibold text-foreground mt-8">Updates to This Disclaimer</h2>
               <p>
-                For questions or concerns, please contact us at support@streamnet.com or (888) 811-0313.
+                Uverse Connect reserves the right to update or modify this disclaimer at any time. Changes 
+                will be posted on this page with an updated "Last Updated" date. Your continued use of 
+                our services after changes are posted constitutes acceptance of the updated disclaimer.
               </p>
+              
+              <h2 className="text-2xl font-semibold text-foreground mt-8">Contact Information</h2>
+              <p>
+                If you have questions about this disclaimer or need clarification about the nature of 
+                our services, please contact us:
+              </p>
+              <ul className="list-disc pl-6 space-y-2">
+                <li>Email: support@universeconnect.com</li>
+                <li>Phone: (888) 811-0313</li>
+                <li>Business Hours: Monday-Friday, 9 AM - 6 PM EST</li>
+              </ul>
             </div>
           </motion.div>
         </div>

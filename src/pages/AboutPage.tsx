@@ -1,23 +1,23 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { Users, ArrowRight, Target, Heart, Zap, Shield, Award, TrendingUp } from 'lucide-react';
+import { Users, ArrowRight, Target, Heart, Zap, Shield, Award, TrendingUp, Rocket, Globe, HeartHandshake, Lightbulb } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
+import heroAboutNew from '@/assets/hero-about-new.jpg';
 
 const values = [
-  { icon: Target, title: 'Customer First', description: 'Every decision we make starts with our customers in mind.' },
-  { icon: Heart, title: 'Reliability', description: 'We deliver consistent, dependable service you can count on.' },
-  { icon: Zap, title: 'Innovation', description: 'Continuously improving our network with the latest technology.' },
-  { icon: Shield, title: 'Integrity', description: 'Transparent pricing and honest communication, always.' }
+  { icon: Target, title: 'Consumer First', description: 'Every recommendation we make prioritizes your needs and circumstances.' },
+  { icon: Heart, title: 'Transparency', description: 'Clear explanations about what we do, what we charge, and who provides services.' },
+  { icon: Zap, title: 'Education', description: 'Helping you understand technology, pricing, and options so you can decide confidently.' },
+  { icon: Shield, title: 'Independence', description: 'Unbiased guidance without favoritism toward any particular provider.' }
 ];
 
-const timeline = [
-  { year: '2010', title: 'Founded', description: 'Started with a vision to bring better connectivity to homes.' },
-  { year: '2015', title: 'Fiber Network', description: 'Launched our first fiber-optic network infrastructure.' },
-  { year: '2018', title: '1M Customers', description: 'Reached one million happy households nationwide.' },
-  { year: '2022', title: 'Gigabit Speeds', description: 'Rolled out 1 Gbps speeds across all major markets.' },
-  { year: '2024', title: '2M+ Customers', description: 'Continuing to grow and serve more families.' }
+const team = [
+  { icon: Rocket, title: 'Expert Advisors', description: 'Knowledgeable team trained in internet technologies, cable TV options, and telecommunications.' },
+  { icon: Globe, title: 'Wide Knowledge', description: 'Understanding options from multiple providers™ across different regions and service types.' },
+  { icon: HeartHandshake, title: 'Honest Guidance', description: 'Building trust through transparent explanations and realistic expectations.' },
+  { icon: Lightbulb, title: 'Clear Communication', description: 'Breaking down complex technical terms into language anyone can understand.' }
 ];
 
 const AboutPage = () => {
@@ -27,7 +27,14 @@ const AboutPage = () => {
       
       {/* Hero */}
       <section className="pt-32 pb-20 lg:pt-40 lg:pb-32 relative overflow-hidden">
-        <div className="absolute inset-0 hero-gradient" />
+        <div className="absolute inset-0">
+          <img
+            src={heroAboutNew}
+            alt="About our company"
+            className="w-full h-full object-cover opacity-50"
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-background/50 via-background/30 to-background/50" />
+        </div>
         <div className="absolute top-20 right-0 w-[600px] h-[600px] blob opacity-50" />
         
         <div className="container mx-auto px-4 lg:px-8 relative">
@@ -38,17 +45,25 @@ const AboutPage = () => {
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
               <Users className="w-4 h-4" />
-              <span>About StreamNet</span>
+              <span>About Uverse Connect</span>
             </div>
             
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight mb-6">
-              Connecting Homes with{' '}
-              <span className="text-primary">Purpose</span>
+              Your Independent Guide to{' '}
+              <span className="text-primary">Connectivity Services</span>
             </h1>
             
             <p className="text-lg text-muted-foreground mb-8">
-              We're on a mission to deliver fast, reliable internet and premium entertainment to every household.
+              Founded in 2025, Uverse Connect provides unbiased assistance helping consumers understand and navigate their internet, cable TV, and telecommunications options.
             </p>
+            
+            {/* Disclosure */}
+            <div className="bg-card/80 backdrop-blur-sm border border-primary/10 rounded-xl p-4 text-sm text-muted-foreground max-w-2xl mx-auto">
+              <p>
+                <strong className="text-foreground">Who We Are:</strong> Uverse Connect is an independent third-party service assistance startup. 
+                We are not affiliated with any internet service providers, cable companies, or telecommunications carriers.
+              </p>
+            </div>
           </motion.div>
         </div>
       </section>
@@ -66,12 +81,12 @@ const AboutPage = () => {
                 Our Mission
               </h2>
               <p className="text-lg text-muted-foreground mb-6">
-                At StreamNet, we believe that everyone deserves access to fast, reliable internet and quality entertainment. 
-                Our mission is to power homes with the connectivity they need to work, play, and stay connected with the world.
+                At Uverse Connect, we believe navigating internet and cable TV options shouldn't be confusing. Our mission is to provide 
+                clear, unbiased guidance that helps consumers make informed decisions about their connectivity and entertainment services.
               </p>
               <p className="text-lg text-muted-foreground">
-                We're committed to building infrastructure that keeps communities connected, 
-                with customer service that actually cares about solving problems.
+                As an independent assistance platform launched in 2025, we're committed to educating consumers about available options 
+                from multiple providers™, with guidance that helps you make the right choice for your needs and budget.
               </p>
             </motion.div>
             
@@ -82,9 +97,9 @@ const AboutPage = () => {
               className="grid grid-cols-2 gap-6"
             >
               {[
-                { icon: Award, value: '10+', label: 'Years of Service' },
-                { icon: Users, value: '2M+', label: 'Happy Customers' },
-                { icon: TrendingUp, value: '99.9%', label: 'Network Uptime' },
+                { icon: Award, value: 'Est. 2025', label: 'Independent Since' },
+                { icon: Users, value: 'Unbiased', label: 'Service Guidance' },
+                { icon: TrendingUp, value: 'Multiple', label: 'Providers™ Compared' },
                 { icon: Shield, value: '24/7', label: 'Support Available' }
               ].map((stat, index) => (
                 <div key={index} className="floating-card p-6 text-center">
@@ -136,7 +151,7 @@ const AboutPage = () => {
         </div>
       </section>
       
-      {/* Timeline */}
+      {/* Why Choose Us */}
       <section className="py-20 lg:py-32 bg-muted/50">
         <div className="container mx-auto px-4 lg:px-8">
           <motion.div
@@ -146,28 +161,28 @@ const AboutPage = () => {
             className="text-center mb-16"
           >
             <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
-              Our Journey
+              Why Choose Uverse Connect
             </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              We combine cutting-edge technology with personalized service to deliver an exceptional experience.
+            </p>
           </motion.div>
           
-          <div className="max-w-3xl mx-auto">
-            {timeline.map((item, index) => (
+          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            {team.map((item, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="flex gap-6 mb-8 last:mb-0"
+                className="floating-card p-8 hover:shadow-glow transition-shadow"
               >
-                <div className="w-20 flex-shrink-0 text-right">
-                  <span className="text-lg font-bold text-primary">{item.year}</span>
+                <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6">
+                  <item.icon className="w-7 h-7 text-primary" />
                 </div>
-                <div className="relative pl-6 border-l-2 border-primary/20 pb-8 last:pb-0">
-                  <div className="absolute left-0 top-0 w-3 h-3 rounded-full bg-primary -translate-x-[7px]" />
-                  <h3 className="text-lg font-bold text-foreground mb-1">{item.title}</h3>
-                  <p className="text-muted-foreground">{item.description}</p>
-                </div>
+                <h3 className="text-xl font-bold text-foreground mb-3">{item.title}</h3>
+                <p className="text-muted-foreground">{item.description}</p>
               </motion.div>
             ))}
           </div>
@@ -181,7 +196,7 @@ const AboutPage = () => {
             Ready to Join Us?
           </h2>
           <p className="text-lg text-muted-foreground mb-8">
-            Experience the StreamNet difference today.
+            Experience the Uverse Connect difference today.
           </p>
           <Link to="/contact">
             <Button variant="hero" size="xl" className="gap-2">

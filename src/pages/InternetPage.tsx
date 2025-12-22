@@ -4,6 +4,7 @@ import { Wifi, Zap, ArrowRight, Check, Shield, Clock, Download, Upload } from 'l
 import { Button } from '@/components/ui/button';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
+import heroInternetNew from '@/assets/hero-internet-new.jpg';
 
 const plans = [
   {
@@ -64,7 +65,14 @@ const InternetPage = () => {
       
       {/* Hero */}
       <section className="pt-32 pb-20 lg:pt-40 lg:pb-32 relative overflow-hidden">
-        <div className="absolute inset-0 hero-gradient" />
+        <div className="absolute inset-0">
+          <img
+            src={heroInternetNew}
+            alt="High-speed internet connectivity"
+            className="w-full h-full object-cover opacity-50"
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-background/50 via-background/30 to-background/50" />
+        </div>
         <div className="absolute top-20 right-0 w-[600px] h-[600px] blob opacity-50" />
         
         <div className="container mx-auto px-4 lg:px-8 relative">
@@ -75,17 +83,25 @@ const InternetPage = () => {
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
               <Wifi className="w-4 h-4" />
-              <span>High-Speed Internet Plans</span>
+              <span>Internet Service Guidance</span>
             </div>
             
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight mb-6">
-              Blazing Fast Internet for Your{' '}
+              Find the Right Internet Service for Your{' '}
               <span className="text-primary">Connected Home</span>
             </h1>
             
             <p className="text-lg text-muted-foreground mb-8">
-              Choose the perfect plan for your household. Stream, game, work, and browse without limits.
+              Get expert assistance understanding internet options from various providers™ in your area. We help you navigate speeds, technology types, and pricing.
             </p>
+            
+            {/* Disclosure */}
+            <div className="bg-card/80 backdrop-blur-sm border border-primary/10 rounded-xl p-4 text-sm text-muted-foreground max-w-2xl mx-auto">
+              <p>
+                <strong className="text-foreground">Important:</strong> Uverse Connect is an independent service assistance platform. 
+                We provide guidance about internet options but do not sell or provide internet services directly. Service fees apply separately from provider charges.
+              </p>
+            </div>
           </motion.div>
         </div>
       </section>
@@ -138,7 +154,7 @@ const InternetPage = () => {
                     size="lg"
                     className="w-full"
                   >
-                    Get Started
+                    Get Assistance
                   </Button>
                 </Link>
               </motion.div>

@@ -16,7 +16,7 @@ const LiveChatWidget = () => {
   const [messages, setMessages] = useState<Message[]>([
     {
       id: 1,
-      text: "Hi there! 👋 Welcome to StreamNet support. How can I help you today?",
+      text: "Hi there! 👋 Welcome to Uverse Connect support. How can I help you today?",
       isBot: true,
       timestamp: new Date()
     }

@@ -51,7 +51,7 @@ const FairUsagePage = () => {
               
               <h2 className="text-2xl font-semibold text-foreground mt-8">Contact</h2>
               <p>
-                Questions about this policy? Contact us at support@streamnet.com or (888) 811-0313.
+                Questions about this policy? Contact us at support@universeconnect.com or (888) 811-0313.
               </p>
             </div>
           </motion.div>

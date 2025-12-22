@@ -17,18 +17,35 @@ const TermsPage = () => {
             <h1 className="text-4xl font-bold text-foreground mb-8">Terms & Conditions</h1>
             
             <div className="prose prose-lg max-w-none text-muted-foreground space-y-6">
-              <p className="text-sm text-muted-foreground">Last updated: December 2024</p>
+              <p className="text-sm text-muted-foreground">Last updated: January 2025</p>
+              
+              <div className="bg-primary/5 border border-primary/10 rounded-lg p-6 my-6">
+                <p className="font-semibold text-foreground mb-2">Important Disclosure:</p>
+                <p className="text-sm">
+                  Uverse Connect is an independent third-party service assistance platform, not an internet service provider,
+                  cable company, or telecommunications carrier. These Terms govern your use of Uverse Connect's assistance services only.
+                </p>
+              </div>
               
               <h2 className="text-2xl font-semibold text-foreground mt-8">1. Acceptance of Terms</h2>
               <p>
-                By accessing or using our services, you agree to be bound by these Terms and Conditions 
-                and our Privacy Policy.
+                By accessing or using Uverse Connect's assistance services, you agree to be bound by these Terms and Conditions 
+                and our Privacy Policy. If you do not agree, please do not use our services.
               </p>
               
-              <h2 className="text-2xl font-semibold text-foreground mt-8">2. Service Description</h2>
+              <h2 className="text-2xl font-semibold text-foreground mt-8">2. Nature of Our Services</h2>
               <p>
-                StreamNet provides information and assistance regarding internet and cable TV services. 
-                We help connect customers with service providers and offer guidance on available plans and packages.
+                Uverse Connect provides educational guidance, consultation, and assistance to help consumers understand and navigate 
+                internet, cable TV, and telecommunications service options. We do NOT:
+              </p>
+              <ul className="list-disc pl-6 space-y-2">
+                <li>Sell or provide internet, cable TV, or phone services directly</li>
+                <li>Act as an agent or representative of any service provider</li>
+                <li>Have authorization to make binding commitments on behalf of providers</li>
+                <li>Handle technical support, installation, or billing for provider services</li>
+              </ul>
+              <p>
+                All services you purchase or activate are provided by independent third-party providers, not by Uverse Connect.
               </p>
               
               <h2 className="text-2xl font-semibold text-foreground mt-8">3. User Responsibilities</h2>
@@ -43,12 +60,12 @@ const TermsPage = () => {
               <h2 className="text-2xl font-semibold text-foreground mt-8">4. Intellectual Property</h2>
               <p>
                 All content on this website, including text, graphics, logos, and software, 
-                is the property of StreamNet and is protected by intellectual property laws.
+                is the property of Uverse Connect and is protected by intellectual property laws.
               </p>
               
               <h2 className="text-2xl font-semibold text-foreground mt-8">5. Limitation of Liability</h2>
               <p>
-                StreamNet provides information assistance only and is not directly responsible for 
+                Uverse Connect provides information assistance only and is not directly responsible for 
                 services provided by third-party providers. We make no guarantees about service availability 
                 or performance.
               </p>
@@ -61,7 +78,7 @@ const TermsPage = () => {
               
               <h2 className="text-2xl font-semibold text-foreground mt-8">7. Contact</h2>
               <p>
-                For questions about these Terms, contact us at support@streamnet.com or (888) 811-0313.
+                For questions about these Terms, contact us at support@universeconnect.com or (888) 811-0313.
               </p>
             </div>
           </motion.div>

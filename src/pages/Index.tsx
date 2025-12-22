@@ -11,9 +11,13 @@ import Footer from '@/components/layout/Footer';
 import LiveChatWidget from '@/components/LiveChatWidget';
 import Testimonials from '@/components/Testimonials';
 import PlanComparison from '@/components/PlanComparison';
-import heroVrPerson from '@/assets/hero-vr-person.jpg';
+import heroBack from '@/assets/heroback.jpg';
+import networkConnection from '@/assets/network-connection.jpg';
+import productsPlans from '@/assets/products-plans.jpg';
+import techProfessional from '@/assets/tech-professional.jpg';
+import customerHappy from '@/assets/customer-happy.jpg';
 import moviesBanner from '@/assets/movies-banner.jpg';
-import contactPerson from '@/assets/contact-person.jpg';
+import contactPerson from '@/assets/support-person.jpg';
 
 const fadeInUp = {
   initial: { opacity: 0, y: 30 },
@@ -39,18 +43,18 @@ const floatingStats = [
 const features = [
   {
     icon: Signal,
-    title: 'Excellent Connection',
-    description: 'Our cutting-edge fiber network delivers consistent, ultra-fast speeds to every corner of your home.'
+    title: 'Connection Guidance',
+    description: 'We help you understand fiber, DSL, and cable options from various providers to find what works for your home.'
   },
   {
     icon: Shield,
-    title: '5G Bandwidth',
-    description: 'Experience next-gen connectivity with our 5G-ready infrastructure for lightning-fast performance.'
+    title: 'Service Education',
+    description: 'Learn about 5G, broadband technologies, and streaming services through our expert assistance.'
   },
   {
     icon: Tv,
-    title: 'Prepaid & Prepaid Sim',
-    description: 'Flexible payment options with prepaid plans that fit your lifestyle and budget perfectly.'
+    title: 'Plan Navigation',
+    description: 'Get support understanding prepaid, postpaid, and flexible payment options across multiple providers.'
   }
 ];
 
@@ -68,133 +72,198 @@ const Index = () => {
       <Header />
       
       {/* Hero Section */}
-      <section className="relative pt-24 pb-16 lg:pt-32 lg:pb-24 overflow-hidden bg-gradient-to-br from-secondary via-secondary to-secondary/95">
+      <section className="relative min-h-screen flex items-center overflow-hidden pt-32 pb-20">
+        {/* Background Image with Parallax Effect */}
         <div className="absolute inset-0">
-          <div className="absolute top-0 right-0 w-full h-full">
-            <img
-              src={heroVrPerson}
-              alt="Person enjoying VR entertainment"
-              className="w-full h-full object-cover opacity-40"
-            />
-            <div className="absolute inset-0 bg-gradient-to-r from-secondary via-secondary/90 to-transparent" />
-          </div>
+          <img
+            src={heroBack}
+            alt="High-speed internet connectivity"
+            className="w-full h-full object-cover scale-105"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-secondary/95 via-secondary/80 to-secondary/60" />
         </div>
         
-        <div className="container mx-auto px-4 lg:px-8 relative">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-            {/* Hero Content */}
+        {/* Floating Elements */}
+        <motion.div 
+          animate={{ 
+            scale: [1, 1.2, 1],
+            opacity: [0.3, 0.5, 0.3]
+          }}
+          transition={{ duration: 8, repeat: Infinity }}
+          className="absolute top-10 right-10 w-96 h-96 bg-primary/30 rounded-full blur-3xl"
+        />
+        <motion.div 
+          animate={{ 
+            scale: [1, 1.3, 1],
+            opacity: [0.2, 0.4, 0.2]
+          }}
+          transition={{ duration: 10, repeat: Infinity, delay: 1 }}
+          className="absolute bottom-10 left-10 w-96 h-96 bg-accent/30 rounded-full blur-3xl"
+        />
+        
+        <div className="container mx-auto px-4 lg:px-8 relative z-10">
+          <div className="grid lg:grid-cols-2 gap-12 items-center mt-4">
+            {/* Left Content */}
             <motion.div
               initial="initial"
               animate="animate"
               variants={staggerContainer}
-              className="text-center lg:text-left"
             >
+              {/* Service Tags */}
               <motion.div
                 variants={fadeInUp}
-                className="flex flex-wrap gap-2 justify-center lg:justify-start mb-6"
+                className="flex flex-wrap gap-3 mb-8"
               >
-                <span className="px-4 py-2 rounded-full bg-primary text-primary-foreground text-sm font-medium">
+                <span className="px-5 py-2.5 rounded-full bg-primary text-primary-foreground text-sm font-semibold flex items-center gap-2 shadow-lg hover:shadow-xl transition-shadow">
+                  <Wifi className="w-4 h-4" />
                   Internet
                 </span>
-                <span className="px-4 py-2 rounded-full bg-card/20 text-card text-sm font-medium border border-card/30">
+                <span className="px-5 py-2.5 rounded-full bg-card/40 backdrop-blur-md text-primary-foreground text-sm font-semibold flex items-center gap-2 border border-primary-foreground/20">
+                  <MonitorPlay className="w-4 h-4" />
                   Streaming
                 </span>
-                <span className="px-4 py-2 rounded-full bg-card/20 text-card text-sm font-medium border border-card/30">
+                <span className="px-5 py-2.5 rounded-full bg-card/40 backdrop-blur-md text-primary-foreground text-sm font-semibold flex items-center gap-2 border border-primary-foreground/20">
+                  <Tv className="w-4 h-4" />
                   TV Service
                 </span>
               </motion.div>
               
+              {/* Main Heading */}
               <motion.h1
                 variants={fadeInUp}
-                className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground leading-tight mb-6"
+                className="text-5xl md:text-6xl lg:text-7xl font-extrabold text-primary-foreground leading-[1.1] mb-6"
               >
-                Unlock Seamless{' '}
-                <span className="text-primary">High-Speed</span>{' '}
-                Browsing.
+                Get Expert Assistance
+                <br />
+                <span className="text-primary">Finding Your</span>
+                <br />
+                Connection.
               </motion.h1>
               
-              {/* Price Badge */}
-              <motion.div
+              {/* Description */}
+              <motion.p
                 variants={fadeInUp}
-                className="inline-block mb-8"
+                className="text-lg lg:text-xl text-primary-foreground/80 mb-8 max-w-xl"
               >
-                <div className="bg-card rounded-xl p-4 shadow-lg">
-                  <div className="flex items-baseline gap-1">
-                    <span className="text-4xl font-bold text-primary">$54</span>
-                    <span className="text-muted-foreground">/mo</span>
-                  </div>
-                  <p className="text-sm text-muted-foreground">Starting from</p>
-                </div>
-              </motion.div>
+                We are an independent service assistance platform that helps guide you through internet, cable, and streaming options. We do not sell services directly.
+              </motion.p>
               
+              {/* CTA Buttons */}
               <motion.div
                 variants={fadeInUp}
-                className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
+                className="flex flex-col sm:flex-row gap-4 mb-10"
               >
-                <Link to="/coverage">
-                  <Button variant="hero" size="lg" className="w-full sm:w-auto gap-2">
-                    Check Availability
+                <Link to="/contact">
+                  <Button variant="hero" size="lg" className="w-full sm:w-auto gap-2 text-base px-8 py-6 shadow-2xl hover:shadow-primary/50 transition-shadow">
+                    Get Assistance
                     <ArrowRight className="w-5 h-5" />
                   </Button>
                 </Link>
                 <Link to="/internet">
-                  <Button variant="hero-outline" size="lg" className="w-full sm:w-auto gap-2 border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10">
+                  <Button variant="hero-outline" size="lg" className="w-full sm:w-auto gap-2 text-base px-8 py-6 border-2 border-primary-foreground/40 text-primary-foreground hover:bg-primary-foreground/10 backdrop-blur-sm">
                     <Play className="w-5 h-5" />
-                    View Plans
+                    Learn More
                   </Button>
                 </Link>
               </motion.div>
+              
+              {/* Trust Indicators */}
+              <motion.div
+                variants={fadeInUp}
+                className="flex items-center gap-6 text-primary-foreground/70"
+              >
+                <div className="flex items-center gap-2">
+                  <CheckCircle className="w-5 h-5 text-accent" />
+                  <span className="text-sm">Independent Service</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <CheckCircle className="w-5 h-5 text-accent" />
+                  <span className="text-sm">Expert Guidance</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <CheckCircle className="w-5 h-5 text-accent" />
+                  <span className="text-sm">No Hidden Fees</span>
+                </div>
+              </motion.div>
             </motion.div>
             
-            {/* Hero Visual */}
+            {/* Right Side - Stats Cards */}
             <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="relative hidden lg:block"
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              className="hidden lg:block"
             >
-              <div className="relative rounded-3xl overflow-hidden">
-                <img
-                  src={heroVrPerson}
-                  alt="Person enjoying VR entertainment"
-                  className="w-full h-auto object-cover rounded-3xl"
-                />
+              <div className="relative">
+                {/* Large Price Card */}
+                <motion.div
+                  whileHover={{ scale: 1.02, y: -5 }}
+                  className="glass-card rounded-3xl p-8 backdrop-blur-xl bg-card/30 border border-primary-foreground/20 shadow-2xl mb-6"
+                >
+                  <p className="text-sm text-primary-foreground/60 mb-2">Service Assistance Fee</p>
+                  <div className="flex items-baseline gap-2 mb-4">
+                    <span className="text-6xl font-bold text-primary">$54</span>
+                    <span className="text-2xl text-primary-foreground/80">/setup</span>
+                  </div>
+                  <div className="h-px bg-primary-foreground/20 mb-4" />
+                  <div className="space-y-3">
+                    <div className="flex items-center gap-2 text-primary-foreground/80">
+                      <CheckCircle className="w-4 h-4 text-accent" />
+                      <span className="text-sm">Expert Guidance</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-primary-foreground/80">
+                      <CheckCircle className="w-4 h-4 text-accent" />
+                      <span className="text-sm">Setup Assistance</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-primary-foreground/80">
+                      <CheckCircle className="w-4 h-4 text-accent" />
+                      <span className="text-sm">Support Access</span>
+                    </div>
+                  </div>
+                  <p className="text-xs text-primary-foreground/50 mt-4">
+                    *Provider charges apply separately
+                  </p>
+                </motion.div>
+                
+                {/* Stats Grid */}
+                <div className="grid grid-cols-2 gap-4">
+                  {floatingStats.map((stat, index) => (
+                    <motion.div
+                      key={index}
+                      whileHover={{ scale: 1.05, y: -3 }}
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 0.5 + index * 0.1 }}
+                      className="glass-card rounded-2xl p-5 backdrop-blur-xl bg-card/20 border border-primary-foreground/10"
+                    >
+                      <stat.icon className="w-6 h-6 text-primary mb-2" />
+                      <p className="text-2xl font-bold text-primary-foreground mb-1">{stat.value}</p>
+                      <p className="text-xs text-primary-foreground/60">{stat.label}</p>
+                    </motion.div>
+                  ))}
+                </div>
               </div>
-              
-              {/* Floating Cards */}
-              <motion.div
-                animate={{ y: [-10, 10, -10] }}
-                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute -top-4 -left-8 glass-card rounded-2xl p-4 shadow-elevated bg-card"
-              >
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-xl bg-primary/20 flex items-center justify-center">
-                    <Zap className="w-5 h-5 text-primary" />
-                  </div>
-                  <div>
-                    <p className="text-xs text-muted-foreground">Speed</p>
-                    <p className="text-lg font-bold text-foreground">940 Mbps</p>
-                  </div>
-                </div>
-              </motion.div>
-              
-              <motion.div
-                animate={{ y: [10, -10, 10] }}
-                transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute bottom-10 -right-8 glass-card rounded-2xl p-4 shadow-elevated bg-card"
-              >
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-xl bg-accent/20 flex items-center justify-center">
-                    <Shield className="w-5 h-5 text-accent" />
-                  </div>
-                  <div>
-                    <p className="text-xs text-muted-foreground">Uptime</p>
-                    <p className="text-lg font-bold text-foreground">99.9%</p>
-                  </div>
-                </div>
-              </motion.div>
             </motion.div>
           </div>
+        </div>
+      </section>
+      
+      {/* Independent Disclosure - Above the Fold */}
+      <section className="py-8 bg-accent/10 border-y border-accent/20">
+        <div className="container mx-auto px-4 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.5 }}
+            className="max-w-4xl mx-auto text-center"
+          >
+            <div className="flex items-start gap-3 justify-center">
+              <Shield className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" />
+              <p className="text-sm lg:text-base text-foreground">
+                <strong>Important Notice:</strong> We are an independent third-party service assistance startup, launched in 2025, and are not affiliated with, endorsed by, or sponsored by any cable, internet, or streaming service provider. We charge a separate service fee for guidance and support. Provider charges apply separately.
+              </p>
+            </div>
+          </motion.div>
         </div>
       </section>
       
@@ -208,13 +277,13 @@ const Index = () => {
             className="text-center mb-12"
           >
             <span className="inline-block px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
-              Our Services
+              How We Help
             </span>
             <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
-              Unleash Endless Possibilities
+              Assistance That Makes a Difference
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              Experience the future of home entertainment with our cutting-edge internet and cable solutions designed for modern households.
+              Our team guides you through internet, cable, and streaming options to help you make informed decisions. We provide support and education—not direct sales.
             </p>
           </motion.div>
           
@@ -253,39 +322,39 @@ const Index = () => {
               viewport={{ once: true }}
             >
               <span className="inline-block px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
-                Our Products & Plans
+                Service Options Guidance
               </span>
               <h2 className="text-3xl lg:text-5xl font-bold text-foreground mb-6">
-                Find Your Ultimate{' '}
-                <span className="text-primary">High-Speed Network</span>
+                We Help You Navigate{' '}
+                <span className="text-primary">Service Choices</span>
               </h2>
               
               <div className="flex gap-4 mb-6">
                 <span className="flex items-center gap-2 text-sm text-foreground">
                   <CheckCircle className="w-5 h-5 text-accent" />
-                  Superfast Package
+                  Multiple Providers
                 </span>
                 <span className="flex items-center gap-2 text-sm text-foreground">
                   <CheckCircle className="w-5 h-5 text-accent" />
-                  Ultra 4G Speed
+                  Unbiased Advice
                 </span>
               </div>
               
               <p className="text-muted-foreground mb-8">
-                Choose from our range of high-speed internet packages tailored to meet your streaming, gaming, and work-from-home needs. All plans include professional installation and 24/7 support.
+                Our assistance helps you understand internet, cable, and streaming options from various providers™. We guide you through features, speeds, and packages—you make the final decision directly with your chosen provider.
               </p>
               
               <div className="flex flex-wrap gap-4">
                 <Link to="/internet">
                   <Button variant="hero" size="lg" className="gap-2">
-                    Explore All
+                    Get Guidance
                     <ArrowRight className="w-5 h-5" />
                   </Button>
                 </Link>
                 <a href="tel:8888110313">
                   <Button variant="outline" size="lg" className="gap-2">
                     <Phone className="w-5 h-5" />
-                    For Product Info
+                    Speak With Support
                   </Button>
                 </a>
               </div>
@@ -299,8 +368,8 @@ const Index = () => {
             >
               <div className="rounded-3xl overflow-hidden shadow-floating">
                 <img
-                  src={heroVrPerson}
-                  alt="Person enjoying high-speed internet"
+                  src={productsPlans}
+                  alt="High-speed internet network setup"
                   className="w-full h-auto object-cover"
                 />
               </div>
@@ -385,6 +454,137 @@ const Index = () => {
         </div>
       </section>
       
+      {/* Sports Streaming Section */}
+      <section className="py-20 lg:py-32 bg-card">
+        <div className="container mx-auto px-4 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+            >
+              <span className="inline-block px-4 py-2 rounded-full bg-accent/10 text-accent text-sm font-medium mb-4">
+                Live Sports
+              </span>
+              <h2 className="text-3xl lg:text-5xl font-bold text-foreground mb-6">
+                Never Miss a Game
+              </h2>
+              <p className="text-lg text-muted-foreground mb-6">
+                Stream live sports, exclusive matches, and replays from all major leagues. Watch your favorite teams in stunning HD quality.
+              </p>
+              <div className="space-y-3 mb-8">
+                <div className="flex items-center gap-3">
+                  <CheckCircle className="w-5 h-5 text-accent flex-shrink-0" />
+                  <span className="text-foreground">NFL, NBA, MLB, NHL & More</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <CheckCircle className="w-5 h-5 text-accent flex-shrink-0" />
+                  <span className="text-foreground">4K Ultra HD Streaming</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <CheckCircle className="w-5 h-5 text-accent flex-shrink-0" />
+                  <span className="text-foreground">Multi-View & DVR Features</span>
+                </div>
+              </div>
+              <Link to="/cable-tv">
+                <Button variant="hero" size="lg" className="gap-2">
+                  Explore Sports Packages
+                  <ArrowRight className="w-5 h-5" />
+                </Button>
+              </Link>
+            </motion.div>
+            
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="relative"
+            >
+              <div className="rounded-3xl overflow-hidden shadow-floating bg-gradient-to-br from-accent/20 to-primary/20 p-8">
+                <div className="grid grid-cols-2 gap-4">
+                  {[
+                    { label: 'Sports Channels', value: '40+' },
+                    { label: 'Live Events', value: '1000+' },
+                    { label: 'HD Quality', value: '100%' },
+                    { label: 'DVR Hours', value: '200' }
+                  ].map((stat, index) => (
+                    <div key={index} className="floating-card p-6 text-center">
+                      <p className="text-3xl font-bold text-primary mb-1">{stat.value}</p>
+                      <p className="text-sm text-muted-foreground">{stat.label}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+      
+      {/* Kids & Family Streaming */}
+      <section className="py-20 lg:py-32 bg-muted/30">
+        <div className="container mx-auto px-4 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="order-2 lg:order-1"
+            >
+              <div className="rounded-3xl overflow-hidden shadow-floating bg-gradient-to-br from-primary/10 to-accent/10 p-8">
+                <div className="space-y-6">
+                  {[
+                    { icon: Tv, title: 'Kids Channels', desc: '20+ dedicated channels' },
+                    { icon: Shield, title: 'Parental Controls', desc: 'Safe viewing for all ages' },
+                    { icon: MonitorPlay, title: 'Educational Content', desc: 'Learning & entertainment' },
+                    { icon: Users, title: 'Family Profiles', desc: 'Personalized for everyone' }
+                  ].map((item, index) => (
+                    <motion.div
+                      key={index}
+                      whileHover={{ x: 10 }}
+                      className="flex items-start gap-4 floating-card p-4"
+                    >
+                      <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+                        <item.icon className="w-6 h-6 text-primary" />
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-foreground mb-1">{item.title}</h4>
+                        <p className="text-sm text-muted-foreground">{item.desc}</p>
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
+            </motion.div>
+            
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="order-1 lg:order-2"
+            >
+              <span className="inline-block px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
+                Family Entertainment
+              </span>
+              <h2 className="text-3xl lg:text-5xl font-bold text-foreground mb-6">
+                Safe & Fun Content for Everyone
+              </h2>
+              <p className="text-lg text-muted-foreground mb-6">
+                Keep the whole family entertained with age-appropriate content, parental controls, and unlimited streaming across all devices.
+              </p>
+              <p className="text-muted-foreground mb-8">
+                From cartoons and educational shows to family movies and documentaries, we've got something for every member of your household.
+              </p>
+              <Link to="/bundles">
+                <Button variant="outline" size="lg" className="gap-2">
+                  View Family Bundles
+                  <ArrowRight className="w-5 h-5" />
+                </Button>
+              </Link>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+      
       {/* Promo Section */}
       <section className="py-20 lg:py-32 bg-card">
         <div className="container mx-auto px-4 lg:px-8">
@@ -396,8 +596,8 @@ const Index = () => {
               className="rounded-3xl overflow-hidden shadow-floating"
             >
               <img
-                src={heroVrPerson}
-                alt="Happy customer enjoying services"
+                src={customerHappy}
+                alt="Professional internet installation service"
                 className="w-full h-auto object-cover"
               />
             </motion.div>

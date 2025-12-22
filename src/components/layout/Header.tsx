@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Phone, Wifi, Tv, Package, MapPin, HelpCircle, Users } from 'lucide-react';
+import { Menu, X, Phone, Wifi, Tv, Package, Mail, Users } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -8,15 +8,15 @@ const navLinks = [
   { name: 'Internet', href: '/internet', icon: Wifi },
   { name: 'Cable TV', href: '/cable-tv', icon: Tv },
   { name: 'Bundles', href: '/bundles', icon: Package },
-  { name: 'Coverage', href: '/coverage', icon: MapPin },
   { name: 'About', href: '/about', icon: Users },
-  { name: 'Support', href: '/support', icon: HelpCircle },
+  { name: 'Contact', href: '/contact', icon: Mail },
 ];
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
+  const isHomePage = location.pathname === '/';
 
   useEffect(() => {
     const handleScroll = () => {
@@ -41,12 +41,12 @@ const Header = () => {
       <div className="container mx-auto px-4 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2 group">
-            <div className="w-10 h-10 rounded-xl bg-primary flex items-center justify-center shadow-glow transition-transform group-hover:scale-105">
-              <Wifi className="w-5 h-5 text-primary-foreground" />
-            </div>
-            <span className="text-xl font-bold text-foreground">
-              Stream<span className="text-primary">Net</span>
+          <Link to="/" className="flex items-center group">
+            <span className="text-2xl font-bold tracking-tight">
+              <span className={`transition-colors duration-300 ${isHomePage && !isScrolled ? 'text-primary-foreground' : 'text-foreground'}`}>
+                UVERSE
+              </span>
+              <span className="text-primary"> CONNECT</span>
             </span>
           </Link>
 

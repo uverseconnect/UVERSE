@@ -6,16 +6,14 @@ const Footer = () => {
 
   const footerLinks = {
     services: [
-      { name: 'Internet Plans', href: '/internet' },
-      { name: 'Cable TV Packages', href: '/cable-tv' },
-      { name: 'Bundle Deals', href: '/bundles' },
-      { name: 'Coverage Map', href: '/coverage' },
+      { name: 'Internet Guidance', href: '/internet' },
+      { name: 'Cable TV Assistance', href: '/cable-tv' },
+      { name: 'Bundle Navigation', href: '/bundles' },
     ],
     company: [
       { name: 'About Us', href: '/about' },
       { name: 'Contact', href: '/contact' },
-      { name: 'Support', href: '/support' },
-      { name: 'Careers', href: '/about' },
+      { name: 'FAQ', href: '/faq' },
     ],
     legal: [
       { name: 'Privacy Policy', href: '/privacy' },
@@ -36,16 +34,16 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
           {/* Brand Column */}
           <div className="lg:col-span-2">
-            <Link to="/" className="flex items-center gap-2 mb-6">
-              <div className="w-10 h-10 rounded-xl bg-primary flex items-center justify-center">
-                <Wifi className="w-5 h-5 text-primary-foreground" />
-              </div>
-              <span className="text-xl font-bold text-secondary-foreground">
-                Stream<span className="text-primary">Net</span>
+            <Link to="/" className="inline-block mb-6">
+              <span className="text-2xl font-bold tracking-tight text-secondary-foreground">
+                UVERSE<span className="text-primary"> CONNECT</span>
               </span>
             </Link>
             <p className="text-secondary-foreground/70 mb-6 max-w-sm">
-              Powering homes with ultra-fast internet and premium cable entertainment. Speed, reliability, and seamless connectivity.
+              Your independent guide to understanding and choosing the right connectivity and entertainment services. We provide assistance navigating options from various providers™.
+            </p>
+            <p className="text-xs text-secondary-foreground/60 mb-4 p-3 bg-secondary-foreground/5 rounded-lg border border-secondary-foreground/10">
+              <strong>Important Disclosure:</strong> Uverse Connect is an independent third-party service assistance startup, launched in 2025. We are not affiliated with any internet service providers, cable companies, or telecommunications carriers. All trademarks belong to their respective owners.
             </p>
             <div className="space-y-3">
               <a
@@ -56,11 +54,11 @@ const Footer = () => {
                 <span>(888) 811-0313</span>
               </a>
               <a
-                href="mailto:support@streamnet.com"
+                href="mailto:support@universeconnect.com"
                 className="flex items-center gap-3 text-secondary-foreground/70 hover:text-primary transition-colors"
               >
                 <Mail className="w-5 h-5" />
-                <span>support@streamnet.com</span>
+                <span>support@universeconnect.com</span>
               </a>
               <div className="flex items-center gap-3 text-secondary-foreground/70">
                 <MapPin className="w-5 h-5" />
@@ -161,7 +159,7 @@ const Footer = () => {
               </a>
             </div>
             <p className="text-secondary-foreground/50 text-sm">
-              © {currentYear} StreamNet. All rights reserved.
+              © {currentYear} Uverse Connect. All rights reserved. Uverse Connect is an independent third-party service platform.
             </p>
           </div>
         </div>

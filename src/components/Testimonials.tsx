@@ -16,7 +16,7 @@ const testimonials: Testimonial[] = [
     name: "Sarah Johnson",
     location: "Los Angeles, CA",
     rating: 5,
-    text: "Switching to StreamNet was the best decision for our family. The internet speed is incredible, and we never have buffering issues during movie nights anymore!",
+    text: "Switching to Uverse Connect was the best decision for our family. The internet speed is incredible, and we never have buffering issues during movie nights anymore!",
     avatar: "SJ"
   },
   {
@@ -24,7 +24,7 @@ const testimonials: Testimonial[] = [
     name: "Michael Chen",
     location: "New York, NY",
     rating: 5,
-    text: "As a remote worker, reliable internet is crucial. StreamNet delivers consistent speeds all day long. Their customer support is also top-notch!",
+    text: "As a remote worker, reliable internet is crucial. Uverse Connect delivers consistent speeds all day long. Their customer support is also top-notch!",
     avatar: "MC"
   },
   {
@@ -48,7 +48,7 @@ const testimonials: Testimonial[] = [
     name: "Jennifer Martinez",
     location: "Phoenix, AZ",
     rating: 5,
-    text: "We've tried several providers over the years, but StreamNet stands out for their reliability and excellent customer service. No more dropped connections!",
+    text: "We've tried several providers over the years, but Uverse Connect stands out for their reliability and excellent customer service. No more dropped connections!",
     avatar: "JM"
   },
   {

@@ -49,7 +49,7 @@ const CookiesPage = () => {
               
               <h2 className="text-2xl font-semibold text-foreground mt-8">Contact</h2>
               <p>
-                Questions about our Cookie Policy? Contact us at support@streamnet.com.
+                Questions about our Cookie Policy? Contact us at support@universeconnect.com.
               </p>
             </div>
           </motion.div>
