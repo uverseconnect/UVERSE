@@ -5,11 +5,10 @@ import { Button } from '@/components/ui/button';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const navLinks = [
-  { name: 'Internet', href: '/internet', icon: Wifi },
-  { name: 'Cable TV', href: '/cable-tv', icon: Tv },
-  { name: 'Bundles', href: '/bundles', icon: Package },
+  { name: 'Services', href: '/internet', icon: Wifi },
   { name: 'About', href: '/about', icon: Users },
-  { name: 'Contact', href: '/contact', icon: Mail },
+  { name: 'FAQ', href: '/faq', icon: Mail },
+  { name: 'Contact', href: '/contact', icon: Phone },
 ];
 
 const Header = () => {
@@ -32,11 +31,10 @@ const Header = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
           ? 'bg-card/90 backdrop-blur-xl shadow-soft border-b border-border/50'
           : 'bg-transparent'
-      }`}
+        }`}
     >
       <div className="container mx-auto px-4 lg:px-8">
         <div className="flex items-center justify-between h-20">
@@ -58,11 +56,10 @@ const Header = () => {
                 <Link
                   key={link.name}
                   to={link.href}
-                  className={`px-4 py-2 rounded-xl text-sm font-medium transition-all duration-200 ${
-                    isActive
+                  className={`px-4 py-2 rounded-xl text-sm font-medium transition-all duration-200 ${isActive
                       ? 'bg-primary/10 text-primary'
                       : 'text-muted-foreground hover:text-foreground hover:bg-muted'
-                  }`}
+                    }`}
                 >
                   {link.name}
                 </Link>
@@ -117,11 +114,10 @@ const Header = () => {
                   <Link
                     key={link.name}
                     to={link.href}
-                    className={`flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium transition-all ${
-                      isActive
+                    className={`flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium transition-all ${isActive
                         ? 'bg-primary/10 text-primary'
                         : 'text-muted-foreground hover:bg-muted hover:text-foreground'
-                    }`}
+                      }`}
                   >
                     <Icon className="w-5 h-5" />
                     {link.name}

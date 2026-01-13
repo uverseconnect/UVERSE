@@ -22,7 +22,7 @@ const ContactPage = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+
     setTimeout(() => {
       setIsSubmitting(false);
       toast({
@@ -36,7 +36,7 @@ const ContactPage = () => {
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      
+
       {/* Hero */}
       <section className="pt-32 pb-20 lg:pt-40 lg:pb-32 relative overflow-hidden">
         <div className="absolute inset-0">
@@ -48,7 +48,7 @@ const ContactPage = () => {
           <div className="absolute inset-0 bg-gradient-to-br from-background/50 via-background/30 to-background/50" />
         </div>
         <div className="absolute top-20 right-0 w-[600px] h-[600px] blob opacity-50" />
-        
+
         <div className="container mx-auto px-4 lg:px-8 relative">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -59,27 +59,26 @@ const ContactPage = () => {
               <Mail className="w-4 h-4" />
               <span>Get in Touch</span>
             </div>
-            
+
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight mb-6">
               Contact{' '}
               <span className="text-primary">Our Team</span>
             </h1>
-            
+
             <p className="text-lg text-muted-foreground mb-8">
               Have questions about our service assistance? We're here to help guide you through your connectivity options.
             </p>
-            
+
             {/* Disclosure */}
-            <div className="bg-card/80 backdrop-blur-sm border border-primary/10 rounded-xl p-4 text-sm text-muted-foreground max-w-2xl mx-auto">
-              <p>
-                <strong className="text-foreground">Important:</strong> Uverse Connect is an independent third-party service assistance platform. 
-                We provide guidance about internet and cable options but do not sell or provide these services directly.
+            <div className="bg-amber-500/10 border border-amber-500/20 rounded-xl p-4 text-sm max-w-2xl mx-auto">
+              <p className="text-foreground">
+                <strong>Disclaimer:</strong> Uverse Connect is an independent third-party service assistance provider. We are not affiliated with, authorized by, or endorsed by any internet, broadband, or cable TV service provider. Brand names, if mentioned, are used strictly for informational purposes only.
               </p>
             </div>
           </motion.div>
         </div>
       </section>
-      
+
       {/* Contact Form & Info */}
       <section className="py-20 lg:py-32 bg-card">
         <div className="container mx-auto px-4 lg:px-8">
@@ -92,7 +91,7 @@ const ContactPage = () => {
             >
               <div className="floating-card p-8">
                 <h2 className="text-2xl font-bold text-foreground mb-6">Send Us a Message</h2>
-                
+
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div>
                     <label className="block text-sm font-medium text-foreground mb-2">
@@ -107,7 +106,7 @@ const ContactPage = () => {
                       className="h-12 rounded-xl"
                     />
                   </div>
-                  
+
                   <div>
                     <label className="block text-sm font-medium text-foreground mb-2">
                       Email Address
@@ -121,7 +120,7 @@ const ContactPage = () => {
                       className="h-12 rounded-xl"
                     />
                   </div>
-                  
+
                   <div>
                     <label className="block text-sm font-medium text-foreground mb-2">
                       Phone Number
@@ -134,7 +133,7 @@ const ContactPage = () => {
                       className="h-12 rounded-xl"
                     />
                   </div>
-                  
+
                   <div>
                     <label className="block text-sm font-medium text-foreground mb-2">
                       Message
@@ -148,7 +147,7 @@ const ContactPage = () => {
                       className="rounded-xl resize-none"
                     />
                   </div>
-                  
+
                   <Button
                     type="submit"
                     variant="hero"
@@ -162,7 +161,7 @@ const ContactPage = () => {
                 </form>
               </div>
             </motion.div>
-            
+
             {/* Contact Info */}
             <motion.div
               initial={{ opacity: 0, x: 30 }}
@@ -172,7 +171,7 @@ const ContactPage = () => {
             >
               <div className="floating-card p-8">
                 <h2 className="text-2xl font-bold text-foreground mb-6">Contact Information</h2>
-                
+
                 <div className="space-y-6">
                   <div className="flex items-start gap-4">
                     <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
@@ -186,7 +185,7 @@ const ContactPage = () => {
                       <p className="text-sm text-muted-foreground">Available 24/7</p>
                     </div>
                   </div>
-                  
+
                   <div className="flex items-start gap-4">
                     <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
                       <Mail className="w-6 h-6 text-primary" />
@@ -199,7 +198,7 @@ const ContactPage = () => {
                       <p className="text-sm text-muted-foreground">Response within 24 hours</p>
                     </div>
                   </div>
-                  
+
                   <div className="flex items-start gap-4">
                     <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
                       <MapPin className="w-6 h-6 text-primary" />
@@ -210,7 +209,7 @@ const ContactPage = () => {
                       <p className="text-sm text-muted-foreground">Major metro areas and expanding</p>
                     </div>
                   </div>
-                  
+
                   <div className="flex items-start gap-4">
                     <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
                       <Clock className="w-6 h-6 text-primary" />
@@ -223,7 +222,7 @@ const ContactPage = () => {
                   </div>
                 </div>
               </div>
-              
+
               {/* Map Placeholder */}
               <div className="floating-card p-2 h-64 bg-muted/50 flex items-center justify-center">
                 <div className="text-center">
@@ -235,7 +234,7 @@ const ContactPage = () => {
           </div>
         </div>
       </section>
-      
+
       <Footer />
     </div>
   );

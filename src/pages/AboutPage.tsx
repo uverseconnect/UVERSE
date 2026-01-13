@@ -15,7 +15,7 @@ const values = [
 
 const team = [
   { icon: Rocket, title: 'Expert Advisors', description: 'Knowledgeable team trained in internet technologies, cable TV options, and telecommunications.' },
-  { icon: Globe, title: 'Wide Knowledge', description: 'Understanding options from multiple providers™ across different regions and service types.' },
+  { icon: Globe, title: 'Wide Knowledge', description: 'Understanding options from multiple providers across different regions and service types.' },
   { icon: HeartHandshake, title: 'Honest Guidance', description: 'Building trust through transparent explanations and realistic expectations.' },
   { icon: Lightbulb, title: 'Clear Communication', description: 'Breaking down complex technical terms into language anyone can understand.' }
 ];
@@ -24,7 +24,7 @@ const AboutPage = () => {
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      
+
       {/* Hero */}
       <section className="pt-32 pb-20 lg:pt-40 lg:pb-32 relative overflow-hidden">
         <div className="absolute inset-0">
@@ -36,7 +36,7 @@ const AboutPage = () => {
           <div className="absolute inset-0 bg-gradient-to-br from-background/50 via-background/30 to-background/50" />
         </div>
         <div className="absolute top-20 right-0 w-[600px] h-[600px] blob opacity-50" />
-        
+
         <div className="container mx-auto px-4 lg:px-8 relative">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -47,27 +47,29 @@ const AboutPage = () => {
               <Users className="w-4 h-4" />
               <span>About Uverse Connect</span>
             </div>
-            
+
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight mb-6">
-              Your Independent Guide to{' '}
-              <span className="text-primary">Connectivity Services</span>
+              Independent Third-Party{' '}
+              <span className="text-primary">Service Assistance Provider</span>
             </h1>
-            
+
             <p className="text-lg text-muted-foreground mb-8">
-              Founded in 2025, Uverse Connect provides unbiased assistance helping consumers understand and navigate their internet, cable TV, and telecommunications options.
+              Uverse Connect is an independent third-party service assistance provider offering general guidance related to internet, broadband, Wi-Fi, and cable TV services.
             </p>
-            
+
             {/* Disclosure */}
-            <div className="bg-card/80 backdrop-blur-sm border border-primary/10 rounded-xl p-4 text-sm text-muted-foreground max-w-2xl mx-auto">
-              <p>
-                <strong className="text-foreground">Who We Are:</strong> Uverse Connect is an independent third-party service assistance startup. 
-                We are not affiliated with any internet service providers, cable companies, or telecommunications carriers.
+            <div className="bg-amber-500/10 border border-amber-500/20 rounded-xl p-6 text-sm max-w-2xl mx-auto">
+              <p className="text-foreground mb-3">
+                <strong>Who We Are:</strong>
+              </p>
+              <p className="text-muted-foreground">
+                Uverse Connect is an independent third-party service assistance provider. We are not affiliated with, authorized by, or endorsed by any internet, broadband, or cable TV service provider. Brand names, if mentioned, are used strictly for informational purposes only.
               </p>
             </div>
           </motion.div>
         </div>
       </section>
-      
+
       {/* Mission */}
       <section className="py-20 lg:py-32 bg-card">
         <div className="container mx-auto px-4 lg:px-8">
@@ -81,15 +83,16 @@ const AboutPage = () => {
                 Our Mission
               </h2>
               <p className="text-lg text-muted-foreground mb-6">
-                At Uverse Connect, we believe navigating internet and cable TV options shouldn't be confusing. Our mission is to provide 
-                clear, unbiased guidance that helps consumers make informed decisions about their connectivity and entertainment services.
+                At Uverse Connect, we assist users by providing informational support, helping them understand service options, and offering general guidance on common connectivity-related concerns.
               </p>
-              <p className="text-lg text-muted-foreground">
-                As an independent assistance platform launched in 2025, we're committed to educating consumers about available options 
-                from multiple providers™, with guidance that helps you make the right choice for your needs and budget.
+              <p className="text-lg text-muted-foreground mb-6">
+                We do not provide internet or cable services directly, and we do not represent or partner with any telecom, internet, or cable TV provider.
+              </p>
+              <p className="text-lg text-foreground font-semibold">
+                Our focus is transparency, clarity, and responsible service assistance.
               </p>
             </motion.div>
-            
+
             <motion.div
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -97,10 +100,10 @@ const AboutPage = () => {
               className="grid grid-cols-2 gap-6"
             >
               {[
-                { icon: Award, value: 'Est. 2025', label: 'Independent Since' },
+                { icon: Award, value: 'Independent', label: 'Third-Party' },
                 { icon: Users, value: 'Unbiased', label: 'Service Guidance' },
-                { icon: TrendingUp, value: 'Multiple', label: 'Providers™ Compared' },
-                { icon: Shield, value: '24/7', label: 'Support Available' }
+                { icon: TrendingUp, value: 'Educational', label: 'Information' },
+                { icon: Shield, value: 'Transparent', label: 'Assistance' }
               ].map((stat, index) => (
                 <div key={index} className="floating-card p-6 text-center">
                   <stat.icon className="w-8 h-8 text-primary mx-auto mb-3" />
@@ -112,7 +115,7 @@ const AboutPage = () => {
           </div>
         </div>
       </section>
-      
+
       {/* Values */}
       <section className="py-20 lg:py-32">
         <div className="container mx-auto px-4 lg:px-8">
@@ -129,7 +132,7 @@ const AboutPage = () => {
               The principles that guide everything we do.
             </p>
           </motion.div>
-          
+
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-5xl mx-auto">
             {values.map((value, index) => (
               <motion.div
@@ -150,7 +153,7 @@ const AboutPage = () => {
           </div>
         </div>
       </section>
-      
+
       {/* Why Choose Us */}
       <section className="py-20 lg:py-32 bg-muted/50">
         <div className="container mx-auto px-4 lg:px-8">
@@ -164,10 +167,10 @@ const AboutPage = () => {
               Why Choose Uverse Connect
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              We combine cutting-edge technology with personalized service to deliver an exceptional experience.
+              We provide independent, transparent assistance to help you understand your connectivity options.
             </p>
           </motion.div>
-          
+
           <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
             {team.map((item, index) => (
               <motion.div
@@ -188,15 +191,15 @@ const AboutPage = () => {
           </div>
         </div>
       </section>
-      
+
       {/* CTA */}
       <section className="py-20 bg-gradient-to-br from-primary/5 to-accent/5">
         <div className="container mx-auto px-4 lg:px-8 text-center">
           <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
-            Ready to Join Us?
+            Ready to Get Independent Guidance?
           </h2>
           <p className="text-lg text-muted-foreground mb-8">
-            Experience the Uverse Connect difference today.
+            Contact us today for general informational support.
           </p>
           <Link to="/contact">
             <Button variant="hero" size="xl" className="gap-2">
@@ -206,7 +209,7 @@ const AboutPage = () => {
           </Link>
         </div>
       </section>
-      
+
       <Footer />
     </div>
   );

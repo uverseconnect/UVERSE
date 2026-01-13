@@ -6,20 +6,19 @@ const Footer = () => {
 
   const footerLinks = {
     services: [
-      { name: 'Internet Guidance', href: '/internet' },
-      { name: 'Cable TV Assistance', href: '/cable-tv' },
-      { name: 'Bundle Navigation', href: '/bundles' },
+      { name: 'Service Assistance', href: '/internet' },
+      { name: 'FAQ', href: '/faq' },
+      { name: 'Support', href: '/support' },
     ],
     company: [
       { name: 'About Us', href: '/about' },
       { name: 'Contact', href: '/contact' },
-      { name: 'FAQ', href: '/faq' },
+      { name: 'Disclaimer', href: '/disclaimer' },
     ],
     legal: [
       { name: 'Privacy Policy', href: '/privacy' },
       { name: 'Terms & Conditions', href: '/terms' },
       { name: 'Cookie Policy', href: '/cookies' },
-      { name: 'Disclaimer', href: '/disclaimer' },
     ],
     policies: [
       { name: 'Refund Policy', href: '/refund-policy' },
@@ -40,11 +39,16 @@ const Footer = () => {
               </span>
             </Link>
             <p className="text-secondary-foreground/70 mb-6 max-w-sm">
-              Your independent guide to understanding and choosing the right connectivity and entertainment services. We provide assistance navigating options from various providers™.
+              Your independent guide to understanding and choosing the right connectivity and entertainment services through general informational support and guidance.
             </p>
-            <p className="text-xs text-secondary-foreground/60 mb-4 p-3 bg-secondary-foreground/5 rounded-lg border border-secondary-foreground/10">
-              <strong>Important Disclosure:</strong> Uverse Connect is an independent third-party service assistance startup, launched in 2025. We are not affiliated with any internet service providers, cable companies, or telecommunications carriers. All trademarks belong to their respective owners.
-            </p>
+            <div className="mb-6 p-4 bg-amber-500/10 border border-amber-500/20 rounded-lg">
+              <p className="text-xs text-foreground font-semibold mb-2">
+                ⚠️ Important Disclaimer
+              </p>
+              <p className="text-xs text-secondary-foreground/80">
+                Uverse Connect is an independent third-party service assistance provider. We are not affiliated with, authorized by, or endorsed by any internet, broadband, or cable TV service provider. Brand names, if mentioned, are used strictly for informational purposes only.
+              </p>
+            </div>
             <div className="space-y-3">
               <a
                 href="tel:8888110313"
