@@ -66,6 +66,7 @@ const LiveChatWidget = () => {
         whileTap={{ scale: 0.95 }}
         animate={{ y: [0, -8, 0] }}
         transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+        aria-label="Open live chat support"
       >
         <MessageCircle className="w-7 h-7" />
       </motion.button>
@@ -94,6 +95,7 @@ const LiveChatWidget = () => {
                 <button
                   onClick={() => setIsOpen(false)}
                   className="p-2 hover:bg-primary-foreground/20 rounded-full transition-colors"
+                  aria-label="Close live chat"
                 >
                   <X className="w-5 h-5" />
                 </button>

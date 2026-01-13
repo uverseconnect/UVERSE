@@ -1,61 +1,39 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { Wifi, Zap, ArrowRight, Check, Shield, Clock, Download, Upload } from 'lucide-react';
+import { Wifi, Zap, ArrowRight, Check, Shield, AlertCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import heroInternetNew from '@/assets/hero-internet-new.jpg';
 
-const plans = [
+const internetTypes = [
   {
-    name: 'Basic',
-    speed: '100 Mbps',
-    price: '49',
-    features: [
-      'Up to 100 Mbps download',
-      'Up to 10 Mbps upload',
-      'Unlimited data',
-      'Free modem rental',
-      'Email support'
-    ],
-    popular: false
+    name: 'Fiber Optics',
+    description: 'High-speed internet delivered through fiber optic cables. Generally offers the fastest speeds and most reliable connections.',
+    characteristics: ['Speeds typically 100+ Mbps', 'Most reliable technology', 'Limited availability in some areas']
   },
   {
-    name: 'Plus',
-    speed: '500 Mbps',
-    price: '79',
-    features: [
-      'Up to 500 Mbps download',
-      'Up to 50 Mbps upload',
-      'Unlimited data',
-      'Free modem + router',
-      '24/7 phone support',
-      'Free installation'
-    ],
-    popular: true
+    name: 'DSL (Digital Subscriber Line)',
+    description: 'Internet delivered through existing telephone lines. Widely available but typically slower than fiber.',
+    characteristics: ['Speeds typically 5-100 Mbps', 'Widely available', 'Speed decreases with distance from provider']
   },
   {
-    name: 'Ultra',
-    speed: '1 Gbps',
-    price: '99',
-    features: [
-      'Up to 1 Gbps download',
-      'Up to 100 Mbps upload',
-      'Unlimited data',
-      'Premium mesh Wi-Fi',
-      'Priority 24/7 support',
-      'Free professional setup',
-      'Network security suite'
-    ],
-    popular: false
+    name: 'Cable Internet',
+    description: 'Delivered through cable TV infrastructure. Good speeds with widespread availability.',
+    characteristics: ['Speeds typically 50-500 Mbps', 'Widely available', 'Speeds can vary by network congestion']
+  },
+  {
+    name: '5G/Fixed Wireless',
+    description: 'Newer wireless technology offering high speeds without requiring cables to your home.',
+    characteristics: ['Speeds typically 50+ Mbps', 'Emerging technology', 'Availability expanding']
   }
 ];
 
-const features = [
-  { icon: Zap, title: 'Lightning Fast', description: 'Fiber-powered speeds up to 1 Gbps' },
-  { icon: Shield, title: 'Secure Network', description: 'Built-in security protection' },
-  { icon: Clock, title: '99.9% Uptime', description: 'Reliable connection guaranteed' },
-  { icon: Download, title: 'Unlimited Data', description: 'No caps or throttling' }
+const factors = [
+  { icon: Zap, title: 'Speed Requirements', description: 'Consider how many users and devices will need internet connection' },
+  { icon: Shield, title: 'Reliability Needs', description: 'Understand uptime guarantees and service quality expectations' },
+  { icon: Check, title: 'Availability', description: 'Not all technologies available in all areas - verify what\'s available at your location' },
+  { icon: AlertCircle, title: 'Data Needs', description: 'Understand if plans have data limits and what your household usage typically is' }
 ];
 
 const InternetPage = () => {
@@ -68,7 +46,7 @@ const InternetPage = () => {
         <div className="absolute inset-0">
           <img
             src={heroInternetNew}
-            alt="High-speed internet connectivity"
+            alt="Internet service options guidance"
             className="w-full h-full object-cover opacity-50"
           />
           <div className="absolute inset-0 bg-gradient-to-br from-background/50 via-background/30 to-background/50" />
@@ -87,83 +65,71 @@ const InternetPage = () => {
             </div>
             
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight mb-6">
-              Find the Right Internet Service for Your{' '}
-              <span className="text-primary">Connected Home</span>
+              Understand Internet Service{' '}
+              <span className="text-primary">Options</span>
             </h1>
             
             <p className="text-lg text-muted-foreground mb-8">
-              Get expert assistance understanding internet options from various providers™ in your area. We help you navigate speeds, technology types, and pricing.
+              Get independent guidance understanding different internet technologies, speeds, and options available from various providers.
             </p>
             
-            {/* Disclosure */}
-            <div className="bg-card/80 backdrop-blur-sm border border-primary/10 rounded-xl p-4 text-sm text-muted-foreground max-w-2xl mx-auto">
-              <p>
-                <strong className="text-foreground">Important:</strong> Uverse Connect is an independent service assistance platform. 
-                We provide guidance about internet options but do not sell or provide internet services directly. Service fees apply separately from provider charges.
+            {/* Mandatory Disclaimer */}
+            <div className="bg-amber-500/10 border border-amber-500/20 rounded-xl p-6 text-sm max-w-2xl mx-auto">
+              <p className="text-foreground mb-3">
+                <strong>⚠️ Important Disclaimer</strong>
+              </p>
+              <p className="text-muted-foreground">
+                Uverse Connect is an independent third-party service assistance provider. We are not affiliated with, authorized by, or endorsed by any internet, broadband, or cable TV service provider. Brand names, if mentioned, are used strictly for informational purposes only.
               </p>
             </div>
           </motion.div>
         </div>
       </section>
       
-      {/* Plans */}
+      {/* Internet Technologies */}
       <section className="py-20 lg:py-32 bg-card">
         <div className="container mx-auto px-4 lg:px-8">
-          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            {plans.map((plan, index) => (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
+              Internet Technology Types
+            </h2>
+            <p className="text-lg text-muted-foreground">
+              Learn about different internet technologies available
+            </p>
+          </motion.div>
+          
+          <div className="grid md:grid-cols-2 gap-8">
+            {internetTypes.map((type, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className={`floating-card p-8 relative ${
-                  plan.popular ? 'ring-2 ring-accent shadow-glow-accent' : ''
-                }`}
+                className="floating-card p-8"
               >
-                {plan.popular && (
-                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 bg-accent text-accent-foreground text-sm font-semibold rounded-full">
-                    Most Popular
-                  </div>
-                )}
-                
-                <div className="text-center mb-6">
-                  <h3 className="text-xl font-bold text-foreground mb-2">{plan.name}</h3>
-                  <div className="flex items-center justify-center gap-2 mb-4">
-                    <Zap className="w-5 h-5 text-primary" />
-                    <span className="text-2xl font-bold text-primary">{plan.speed}</span>
-                  </div>
-                  <div className="flex items-baseline justify-center gap-1">
-                    <span className="text-4xl font-bold text-foreground">${plan.price}</span>
-                    <span className="text-muted-foreground">/mo</span>
-                  </div>
-                </div>
-                
-                <ul className="space-y-3 mb-8">
-                  {plan.features.map((feature, i) => (
+                <h3 className="text-xl font-bold text-foreground mb-3">{type.name}</h3>
+                <p className="text-muted-foreground mb-4">{type.description}</p>
+                <ul className="space-y-2">
+                  {type.characteristics.map((char, i) => (
                     <li key={i} className="flex items-center gap-3 text-sm text-muted-foreground">
                       <Check className="w-4 h-4 text-accent flex-shrink-0" />
-                      {feature}
+                      {char}
                     </li>
                   ))}
                 </ul>
-                
-                <Link to="/contact">
-                  <Button
-                    variant={plan.popular ? 'hero' : 'outline'}
-                    size="lg"
-                    className="w-full"
-                  >
-                    Get Assistance
-                  </Button>
-                </Link>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
       
-      {/* Features */}
+      {/* Factors to Consider */}
       <section className="py-20 lg:py-32">
         <div className="container mx-auto px-4 lg:px-8">
           <motion.div
@@ -173,46 +139,99 @@ const InternetPage = () => {
             className="text-center mb-16"
           >
             <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
-              Why Choose Our Internet?
+              Factors to Consider
             </h2>
+            <p className="text-lg text-muted-foreground">
+              When evaluating internet service options for your home
+            </p>
           </motion.div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {features.map((feature, index) => (
+            {factors.map((factor, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="text-center"
+                className="floating-card p-8 text-center"
               >
                 <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                  <feature.icon className="w-8 h-8 text-primary" />
+                  <factor.icon className="w-8 h-8 text-primary" />
                 </div>
-                <h3 className="text-lg font-bold text-foreground mb-2">{feature.title}</h3>
-                <p className="text-sm text-muted-foreground">{feature.description}</p>
+                <h3 className="text-lg font-bold text-foreground mb-2">{factor.title}</h3>
+                <p className="text-sm text-muted-foreground">{factor.description}</p>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
       
-      {/* CTA */}
+      {/* What We Help With */}
+      <section className="py-20 lg:py-32 bg-muted/30">
+        <div className="container mx-auto px-4 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="max-w-3xl mx-auto"
+          >
+            <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-8">
+              How We Help
+            </h2>
+            
+            <div className="space-y-6">
+              <div className="flex gap-4">
+                <Check className="w-6 h-6 text-accent flex-shrink-0 mt-1" />
+                <div>
+                  <h3 className="font-semibold text-foreground mb-2">Understand Your Options</h3>
+                  <p className="text-muted-foreground">We explain different internet technologies and how they differ in speed, reliability, and availability.</p>
+                </div>
+              </div>
+              
+              <div className="flex gap-4">
+                <Check className="w-6 h-6 text-accent flex-shrink-0 mt-1" />
+                <div>
+                  <h3 className="font-semibold text-foreground mb-2">Navigate Common Questions</h3>
+                  <p className="text-muted-foreground">We help clarify terms, explain speed requirements, and address common concerns about connectivity.</p>
+                </div>
+              </div>
+              
+              <div className="flex gap-4">
+                <Check className="w-6 h-6 text-accent flex-shrink-0 mt-1" />
+                <div>
+                  <h3 className="font-semibold text-foreground mb-2">Information About Availability</h3>
+                  <p className="text-muted-foreground">We provide general guidance on how to check what internet technologies are available in your area.</p>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+      
+      {/* Important Note */}
       <section className="py-20 bg-gradient-to-br from-primary/5 to-accent/5">
-        <div className="container mx-auto px-4 lg:px-8 text-center">
-          <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
-            Ready to Get Started?
-          </h2>
-          <p className="text-lg text-muted-foreground mb-8">
-            Call us today and get connected within 48 hours.
-          </p>
-          <Link to="/contact">
-            <Button variant="hero" size="xl" className="gap-2">
-              Check Availability
-              <ArrowRight className="w-5 h-5" />
-            </Button>
-          </Link>
+        <div className="container mx-auto px-4 lg:px-8">
+          <div className="max-w-3xl mx-auto text-center">
+            <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
+              Get Independent Guidance
+            </h2>
+            <p className="text-lg text-muted-foreground mb-8">
+              Our team provides informational support to help you understand your internet service options.
+            </p>
+            <Link to="/contact">
+              <Button variant="hero" size="xl" className="gap-2">
+                Contact an Advisor
+                <ArrowRight className="w-5 h-5" />
+              </Button>
+            </Link>
+            
+            <div className="mt-8 p-4 bg-amber-500/10 border border-amber-500/20 rounded-lg">
+              <p className="text-sm text-muted-foreground">
+                <strong className="text-foreground">Note:</strong> We do not provide internet service directly. To activate internet service, you will need to contact your chosen service provider directly.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
       

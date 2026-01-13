@@ -1,63 +1,27 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { Tv, ArrowRight, Check, Film, Trophy, Newspaper, Music, Heart, Gamepad2 } from 'lucide-react';
+import { Tv, ArrowRight, Check, AlertCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import heroTvNew from '@/assets/hero-tv-new.jpg';
 
-const packages = [
+const tvTypes = [
   {
-    name: 'Family',
-    channels: '125+',
-    price: '59',
-    features: [
-      '125+ HD channels',
-      'Family entertainment',
-      'Kids programming',
-      'Local channels',
-      'DVR included'
-    ],
-    popular: false
+    name: 'Traditional Cable TV',
+    description: 'Channels delivered through cable infrastructure. Offers a large selection of live and on-demand content.',
+    characteristics: ['Hundreds of channels available', 'Live sports and events', 'DVR recording capabilities', 'May include premium add-ons']
   },
   {
-    name: 'Sports',
-    channels: '200+',
-    price: '89',
-    features: [
-      '200+ HD channels',
-      'All major sports networks',
-      'Regional sports',
-      'Premium sports add-ons',
-      'Multi-room DVR',
-      '4K sports available'
-    ],
-    popular: true
+    name: 'Streaming Services',
+    description: 'On-demand content delivered over internet connection. More flexible and portable viewing.',
+    characteristics: ['Watch on multiple devices', 'Pause and resume anywhere', 'Commercial-free options', 'Wide variety of content types']
   },
   {
-    name: 'Premium',
-    channels: '500+',
-    price: '129',
-    features: [
-      '500+ HD channels',
-      'All premium movie channels',
-      'Complete sports package',
-      'International channels',
-      'Whole-home DVR',
-      'Streaming apps included',
-      '4K content library'
-    ],
-    popular: false
+    name: 'Satellite TV',
+    description: 'Television delivered via satellite signal. Good option in areas without cable availability.',
+    characteristics: ['Widely available nationwide', 'Weather can affect service', 'Variety of programming', 'DVR options available']
   }
-];
-
-const categories = [
-  { icon: Film, name: 'Movies', count: '50+' },
-  { icon: Trophy, name: 'Sports', count: '40+' },
-  { icon: Newspaper, name: 'News', count: '30+' },
-  { icon: Music, name: 'Music', count: '25+' },
-  { icon: Heart, name: 'Lifestyle', count: '35+' },
-  { icon: Gamepad2, name: 'Kids', count: '20+' }
 ];
 
 const CableTVPage = () => {
@@ -70,7 +34,7 @@ const CableTVPage = () => {
         <div className="absolute inset-0">
           <img
             src={heroTvNew}
-            alt="Premium cable TV entertainment"
+            alt="Cable TV entertainment options"
             className="w-full h-full object-cover opacity-50"
           />
           <div className="absolute inset-0 bg-gradient-to-br from-background/50 via-background/30 to-background/50" />
@@ -89,51 +53,29 @@ const CableTVPage = () => {
             </div>
             
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight mb-6">
-              Navigate Cable TV Options for{' '}
-              <span className="text-primary">Your Entertainment</span> Needs
+              Understand Cable TV Service{' '}
+              <span className="text-primary">Options</span>
             </h1>
             
             <p className="text-lg text-muted-foreground mb-8">
-              Get assistance understanding cable TV packages from multiple providers™. We help you compare channels, pricing, and features.
+              Get independent guidance on cable TV packages and how they differ from streaming and satellite options.
             </p>
             
-            {/* Disclosure */}
-            <div className="bg-card/80 backdrop-blur-sm border border-primary/10 rounded-xl p-4 text-sm text-muted-foreground max-w-2xl mx-auto">
-              <p>
-                <strong className="text-foreground">Important:</strong> Uverse Connect is an independent service assistance platform. 
-                We provide guidance about cable TV options but do not sell or provide cable services directly. Service fees apply separately from provider charges.
+            {/* Mandatory Disclaimer */}
+            <div className="bg-amber-500/10 border border-amber-500/20 rounded-xl p-6 text-sm max-w-2xl mx-auto">
+              <p className="text-foreground mb-3">
+                <strong>⚠️ Important Disclaimer</strong>
+              </p>
+              <p className="text-muted-foreground">
+                Uverse Connect is an independent third-party service assistance provider. We are not affiliated with, authorized by, or endorsed by any internet, broadband, or cable TV service provider. Brand names, if mentioned, are used strictly for informational purposes only.
               </p>
             </div>
           </motion.div>
         </div>
       </section>
       
-      {/* Channel Categories */}
-      <section className="py-16 bg-card">
-        <div className="container mx-auto px-4 lg:px-8">
-          <div className="grid grid-cols-3 lg:grid-cols-6 gap-4 lg:gap-8">
-            {categories.map((cat, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.05 }}
-                className="text-center"
-              >
-                <div className="w-14 h-14 lg:w-16 lg:h-16 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-3">
-                  <cat.icon className="w-7 h-7 lg:w-8 lg:h-8 text-primary" />
-                </div>
-                <p className="font-semibold text-foreground">{cat.name}</p>
-                <p className="text-sm text-muted-foreground">{cat.count} channels</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-      
-      {/* Packages */}
-      <section className="py-20 lg:py-32">
+      {/* Cable TV Types */}
+      <section className="py-20 lg:py-32 bg-card">
         <div className="container mx-auto px-4 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -142,82 +84,104 @@ const CableTVPage = () => {
             className="text-center mb-16"
           >
             <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
-              Choose Your Package
+              Television Service Types
             </h2>
             <p className="text-lg text-muted-foreground">
-              Flexible packages designed for every type of viewer.
+              Learn about different ways to access television content
             </p>
           </motion.div>
           
-          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            {packages.map((pkg, index) => (
+          <div className="grid md:grid-cols-3 gap-8">
+            {tvTypes.map((type, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className={`floating-card p-8 relative ${
-                  pkg.popular ? 'ring-2 ring-accent shadow-glow-accent' : ''
-                }`}
+                className="floating-card p-8"
               >
-                {pkg.popular && (
-                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 bg-accent text-accent-foreground text-sm font-semibold rounded-full">
-                    Best Value
-                  </div>
-                )}
-                
-                <div className="text-center mb-6">
-                  <h3 className="text-xl font-bold text-foreground mb-2">{pkg.name}</h3>
-                  <div className="flex items-center justify-center gap-2 mb-4">
-                    <Tv className="w-5 h-5 text-primary" />
-                    <span className="text-2xl font-bold text-primary">{pkg.channels} Channels</span>
-                  </div>
-                  <div className="flex items-baseline justify-center gap-1">
-                    <span className="text-4xl font-bold text-foreground">${pkg.price}</span>
-                    <span className="text-muted-foreground">/mo</span>
-                  </div>
-                </div>
-                
-                <ul className="space-y-3 mb-8">
-                  {pkg.features.map((feature, i) => (
+                <h3 className="text-xl font-bold text-foreground mb-3">{type.name}</h3>
+                <p className="text-muted-foreground mb-4">{type.description}</p>
+                <ul className="space-y-2">
+                  {type.characteristics.map((char, i) => (
                     <li key={i} className="flex items-center gap-3 text-sm text-muted-foreground">
                       <Check className="w-4 h-4 text-accent flex-shrink-0" />
-                      {feature}
+                      {char}
                     </li>
                   ))}
                 </ul>
-                
-                <Link to="/contact">
-                  <Button
-                    variant={pkg.popular ? 'hero' : 'outline'}
-                    size="lg"
-                    className="w-full"
-                  >
-                    Get Assistance
-                  </Button>
-                </Link>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
       
-      {/* CTA */}
+      {/* What We Help With */}
+      <section className="py-20 lg:py-32">
+        <div className="container mx-auto px-4 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="max-w-3xl mx-auto"
+          >
+            <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-8">
+              How We Help
+            </h2>
+            
+            <div className="space-y-6">
+              <div className="flex gap-4">
+                <Check className="w-6 h-6 text-accent flex-shrink-0 mt-1" />
+                <div>
+                  <h3 className="font-semibold text-foreground mb-2">Understand Your Options</h3>
+                  <p className="text-muted-foreground">We explain the differences between cable, streaming, and satellite TV options so you can make an informed decision.</p>
+                </div>
+              </div>
+              
+              <div className="flex gap-4">
+                <Check className="w-6 h-6 text-accent flex-shrink-0 mt-1" />
+                <div>
+                  <h3 className="font-semibold text-foreground mb-2">Navigate Package Features</h3>
+                  <p className="text-muted-foreground">We help clarify what different packages include, like channels, DVR capabilities, and streaming integration.</p>
+                </div>
+              </div>
+              
+              <div className="flex gap-4">
+                <Check className="w-6 h-6 text-accent flex-shrink-0 mt-1" />
+                <div>
+                  <h3 className="font-semibold text-foreground mb-2">General Informational Guidance</h3>
+                  <p className="text-muted-foreground">We provide general information to help you understand what's available from various providers in your area.</p>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+      
+      {/* Important Note */}
       <section className="py-20 bg-gradient-to-br from-primary/5 to-accent/5">
-        <div className="container mx-auto px-4 lg:px-8 text-center">
-          <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
-            Ready to Explore Your Options?
-          </h2>
-          <p className="text-lg text-muted-foreground mb-8">
-            Let us help you understand cable TV packages available from various providers™ in your area.
-          </p>
-          <Link to="/contact">
-            <Button variant="hero" size="xl" className="gap-2">
-              Get Assistance
-              <ArrowRight className="w-5 h-5" />
-            </Button>
-          </Link>
+        <div className="container mx-auto px-4 lg:px-8">
+          <div className="max-w-3xl mx-auto text-center">
+            <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
+              Get Independent Guidance
+            </h2>
+            <p className="text-lg text-muted-foreground mb-8">
+              Our team provides informational support to help you understand your cable TV service options.
+            </p>
+            <Link to="/contact">
+              <Button variant="hero" size="xl" className="gap-2">
+                Contact an Advisor
+                <ArrowRight className="w-5 h-5" />
+              </Button>
+            </Link>
+            
+            <div className="mt-8 p-4 bg-amber-500/10 border border-amber-500/20 rounded-lg">
+              <p className="text-sm text-muted-foreground">
+                <strong className="text-foreground">Note:</strong> We do not provide cable TV service directly. To activate cable service, you will need to contact your chosen service provider directly.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
       

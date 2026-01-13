@@ -8,43 +8,43 @@ const FAQPage = () => {
   const faqs = [
     {
       question: 'Is Uverse Connect a telecommunications company or internet service provider?',
-      answer: 'No. Uverse Connect is an independent third-party service assistance platform that launched in 2025. We help consumers understand and navigate their options when looking for internet, cable TV, and related services. We are not a telecommunications company, ISP, or cable provider ourselves.'
+      answer: 'No. Uverse Connect is an independent third-party service assistance provider. We provide general guidance and informational support related to internet, cable TV, and telecommunications services. We are not a telecommunications company, ISP, or cable provider ourselves.'
     },
     {
-      question: 'Can I purchase internet or cable plans directly from Uverse Connect?',
-      answer: 'No. Uverse Connect does not sell internet plans, cable subscriptions, or telecommunications services directly. We provide guidance, education, and assistance to help you understand available options from various providers™. You will complete any purchase or sign-up process directly with the provider you choose.'
-    },
-    {
-      question: 'What does Uverse Connect charge for its service?',
-      answer: 'Uverse Connect charges a service assistance fee for our consultation, guidance, and support services. This fee covers our time helping you understand options, comparing providers, and facilitating connections. Our typical assistance fee is $54, though this may vary based on the scope of assistance needed. This fee is separate from any charges you will pay directly to your chosen service provider.'
-    },
-    {
-      question: 'Will I be billed by Uverse Connect for my monthly internet or cable service?',
-      answer: 'No. Uverse Connect only charges for our one-time assistance services. Your monthly internet, cable, or phone bills will come directly from the provider you choose to work with. We have no ongoing billing relationship with you after our assistance is complete.'
-    },
-    {
-      question: 'Does Uverse Connect have access to my account passwords or personal service information?',
-      answer: 'No. Uverse Connect does not have access to your account credentials, passwords, or personal service information with any provider. You create and manage all accounts directly with your chosen provider. We simply provide guidance during your decision-making process.'
-    },
-    {
-      question: 'If I have technical issues with my internet or cable service, do I contact Uverse Connect?',
-      answer: 'For technical support, service outages, billing questions, or account changes related to your internet, cable, or phone service, you should contact your provider directly. Uverse Connect provides assistance choosing and understanding services, but ongoing technical support and account management are handled by your service provider.'
-    },
-    {
-      question: 'What is Uverse Connect\'s refund policy?',
-      answer: 'Uverse Connect offers refunds for our service assistance fee within 7-15 business days under certain conditions. Refund eligibility depends on the type and stage of assistance provided. Please see our Refund Policy page for complete details on eligibility requirements, timeframes, and the refund request process.'
+      question: 'Can I purchase internet or cable services directly from Uverse Connect?',
+      answer: 'No. Uverse Connect does not sell internet plans, cable subscriptions, or telecommunications services. We provide guidance and informational support to help you understand available options from various providers. You will complete any service purchase or sign-up directly with the provider you choose.'
     },
     {
       question: 'Is Uverse Connect affiliated with or endorsed by any internet or cable providers?',
-      answer: 'No. Uverse Connect is completely independent and is not affiliated with, sponsored by, or endorsed by any internet service providers, cable companies, or telecommunications carriers. We provide unbiased guidance across options from multiple providers™. All company names and trademarks are the property of their respective owners.'
+      answer: 'No. Uverse Connect is completely independent and not affiliated with, authorized by, or endorsed by any internet service providers, cable companies, or telecommunications carriers. We provide unbiased, independent guidance. All company names and trademarks are the property of their respective owners.'
     },
     {
-      question: 'How does Uverse Connect help me choose a service?',
-      answer: 'Our team of advisors helps you understand different types of internet connections (fiber, DSL, cable, 5G), cable TV packages, streaming options, and bundle deals. We educate you on technical terms, help you compare what different providers offer in your area, and guide you through the decision-making process based on your specific needs and budget.'
+      question: 'What kind of assistance do you provide?',
+      answer: 'We help you understand different types of internet connections (fiber, DSL, cable, 5G), cable TV options, streaming services, and bundle packages. We educate you on technical terms, explain what different providers offer in your area, and guide you through understanding your options based on your specific needs.'
     },
     {
-      question: 'What happens after I receive assistance from Uverse Connect?',
-      answer: 'After we help you understand your options and you choose a provider, you\'ll work directly with that provider to complete sign-up, installation scheduling, payment, and service activation. Uverse Connect\'s role is complete once we\'ve provided guidance. The provider you select will handle all aspects of service delivery, billing, and ongoing support.'
+      question: 'If I have technical issues with my service, do I contact Uverse Connect?',
+      answer: 'No. For technical support, service outages, billing questions, or account issues with your internet or cable service, you should contact your service provider directly. Uverse Connect provides guidance on choosing services, but ongoing technical support and account management are handled by your provider.'
+    },
+    {
+      question: 'Does Uverse Connect have access to my account information?',
+      answer: 'No. Uverse Connect does not have access to your account credentials, passwords, or personal service information with any provider. You create and manage all accounts directly with your chosen provider. We only provide informational guidance.'
+    },
+    {
+      question: 'What happens after I choose a provider?',
+      answer: 'After we help you understand your options and you decide on a provider, you will work directly with that provider to complete sign-up, installation scheduling, payments, and service activation. Our role is limited to providing informational guidance about your options.'
+    },
+    {
+      question: 'Do you guarantee specific service speeds or quality from providers?',
+      answer: 'No. We provide informational guidance about what different providers offer, but we cannot guarantee service quality, speeds, reliability, or availability. Those depend entirely on your chosen provider. We recommend verifying all details directly with the provider before signing up.'
+    },
+    {
+      question: 'Will I be billed by Uverse Connect for monthly services?',
+      answer: 'No. Any monthly charges for internet, cable, or phone services will come directly from your chosen provider. Uverse Connect provides informational guidance and assistance only.'
+    },
+    {
+      question: 'How is Uverse Connect different from official customer support?',
+      answer: 'Uverse Connect is an independent third-party provider offering general informational guidance. We are not official support for any provider. For official support, account management, billing questions, or technical issues, you need to contact your service provider directly.'
     }
   ];
 
